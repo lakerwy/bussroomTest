@@ -1,0 +1,163 @@
+@vw: 19.2vw;
+@vh: 10.8vh;
+.card {
+  //height: 100%;
+  margin-bottom: 20px;
+  box-shadow: 5px 5px 3px #88888873;
+  border: none;
+  //border-top-left-radius: 0 0;
+}
+.card:hover {
+  box-shadow: 5px 5px 3px #88888873;
+}
+.h3-title {
+  font-size: 20px;
+  font-family: Microsoft YaHei-Bold, Microsoft YaHei;
+  font-weight: bold;
+  color: #333333;
+}
+.myteam {
+  span{
+    font-size: 16px;
+    font-family: "Microsoft YaHei-Regular";
+    width: 105px;
+    text-align: center;
+    display: inline-block;
+    padding: 5px 15px;
+    background: #F1F1F1;
+    color: #999999;
+    //margin-right: 10px;
+    border-radius: 2px;
+    border-bottom-left-radius: 0 0;
+    border-bottom-right-radius: 0 0;
+    cursor: pointer;
+  }
+  .active {
+    border-top: 2px solid #83A1F8;
+    background: white;
+    color: #2F77FF;
+  }
+}
+.myTabs {
+  .ivu-tabs-tab {
+    font-size: 18px;
+    font-family: Microsoft YaHei-Regular, Microsoft YaHei;
+    font-weight: 400;
+    color: #333333;
+    //padding: 8px 0px;
+    //margin-right: 16px;
+  }
+
+  .ivu-tabs-ink-bar {
+    background: #3F6EF5;
+  }
+}
+
+.ivu-btn-primary {
+  background: #3F6EF5;
+
+  &:hover {
+    background: #3F6EF5;
+  }
+}
+.ivu-page-item-active {
+  background: #3F6EF5;
+  &:hover a {
+    color: white;
+  }
+  a {
+    color: white;
+  }
+}
+
+.my-table {
+  margin-top: 10px;
+  /deep/ .ivu-table-body {
+    min-height: 350px;
+  }
+  /deep/.ivu-table-tip{
+    tr {
+      height: 400px;
+    }
+    td {
+      border-bottom: none;
+      //width: 100% !important;
+    }
+  }
+  /deep/ .ivu-table:before{
+    background-color: transparent;
+  }
+  /deep/ .ivu-table-header {
+    th {
+      background: #EDF2FF;
+      height: 50px;
+    }
+  }
+  /deep/ .ivu-table-fixed-header {
+    th {
+      background: #EDF2FF;
+      height: 50px;
+    }
+  }
+}
+
+//提示性公告样式
+.my-explain {
+  height: 33px;
+  line-height: 33px;
+  background: #FFFBF2;
+  width: 100%;
+  border: 1px solid #FFC531;
+  border-radius: 4px;
+  .icon {
+    font-size: 18px;
+    color: #FFC531;
+    margin: 0 5px;
+  }
+}
+
+//免费弹窗样式
+#freeMask {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  z-index: 109;
+  background-color:rgba(0, 0, 0, 0.6);
+}
+.freeMaskBox {
+  width: 470px;
+  height: 158px;
+  background: #FFFFFF;
+  border-radius: 4px 4px 4px 4px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  font-size: 14px;
+  font-family: Microsoft YaHei-Regular, Microsoft YaHei;
+  font-weight: 400;
+  color: #000000;
+  line-height: 16px;
+  text-align: center;
+  padding-top: 56px;
+}
+#freeMaskClose {
+  width: 17px;
+  height: 16.3px;
+  background: url("https://cdn.chinabidding.cn/public/2020/img/yuanbo/ybtc_right_icon.png") no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+}
+.freeMaskPhone {
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 20px;
+  font-family: Microsoft YaHei-Regular, Microsoft YaHei;
+  font-weight: 400;
+  color: #3F6EF5;
+  line-height: 23px;
+}
