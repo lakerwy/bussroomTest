@@ -198,18 +198,23 @@
 </template>
 
 <script>
-import { removeCollection, saveCollection, collectMailSub } from "@/api/index.js";
-import { deepClone, setProjectType, filterDict, dateFormat } from "@/utils/utils.js";
 import {
-  getMyVisit,
-  exportAnnouncement,
   downAnnouncement,
-  removeCollect,
-  setShare
 } from "@/api/myAttention";
+import { deepClone, setProjectType, filterDict, dateFormat } from "@/utils/utils.js";
 import { columnType, informationType, timeRange, projectPhase, areaData, category1Data, regionData } from "@/utils/const/attention";
 import { ShareModal, ReadTitle } from "@/components/contentBox/index.js"
 import {mapMutations, mapState} from "vuex";
+
+import {
+  getMyVisit,
+  saveCollection,
+  removeCollection,
+  collectMailSub,
+  removeCollect,
+  exportAnnouncement,
+  setShare
+} from "@/api_new/myAttention";
 
 export default {
   name: "index",
@@ -565,10 +570,11 @@ export default {
       let res = await exportAnnouncement(params);
       const {success, result} = res;
       if(success){
-        let title = "导出明细.xlsx"
-        downAnnouncement({
-          path: result
-        }, title)
+        this.$Message.success("导出公告成功")
+        // let title = "导出明细.xlsx"
+        // downAnnouncement({
+        //   path: result
+        // }, title)
       }
     },
     //批量收藏功能

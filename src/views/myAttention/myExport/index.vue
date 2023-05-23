@@ -79,10 +79,16 @@
 
 <script>
 import { deepClone, filterDict, setProjectType } from "@/utils/utils.js";
-import {downAnnouncement, exportAnnouncement, getMyExport, getMyExportDetail} from "@/api/myAttention";
 import {infoTypeList, timeRange, category1Data} from "@/utils/const/attention";
 import {mapMutations, mapState} from "vuex";
-import { collectMailSub } from "@/api/index.js";
+import {downAnnouncement} from "@/api/myAttention";
+
+import {
+  collectMailSub,
+  exportAnnouncement,
+  getMyExport,
+  getMyExportDetail
+} from "@/api_new/myAttention";
 
 export default {
   name: "index",
@@ -362,9 +368,10 @@ export default {
       // let ids = params.row.ids.replace(/(\[|\])/g,"");
       // this.downloadCom(ids);
       let title = params.row.path;
-      downAnnouncement({
-        path: params.row.path
-      }, title)
+      this.$Message.success("导出公告成功")
+      // downAnnouncement({
+      //   path: params.row.path
+      // }, title)
     },
     //我的导出明细
     async getMyExportDetail(flag){
@@ -412,9 +419,10 @@ export default {
       if(success){
         // let title = "导出明细.xlsx"
         let title = result;
-        downAnnouncement({
-          path: result
-        }, title)
+        this.$Message.success("导出公告成功")
+        // downAnnouncement({
+        //   path: result
+        // }, title)
       }
     },
     //批量收藏功能

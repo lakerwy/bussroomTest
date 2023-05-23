@@ -284,22 +284,27 @@
 </template>
 
 <script>
-import { removeCollection, saveCollection, collectMailSub, removeGroup } from "@/api/index.js";
-import { deepClone, setProjectType, filterDict, dateFormat } from "@/utils/utils.js";
 import {
   downAnnouncement,
-  exportAnnouncement,
-  getMemberSearch,
-  getNzjSearch,
-  getZtbSearch,
-  removeCollect,
-  saveMemberSearch,
-  removeMemberSearch,
-  setShare
 } from "@/api/myAttention";
+import { deepClone, setProjectType, filterDict, dateFormat } from "@/utils/utils.js";
 import { columnType, informationType, timeRange, projectPhase, areaData, category1Data, regionData} from "@/utils/const/attention";
 import {mapGetters, mapMutations, mapState} from "vuex";
 import { ShareModal, ReadTitle } from "@/components/contentBox/index.js"
+
+import {
+  getMemberSearch,
+  getZtbSearch,
+  getNzjSearch,
+  saveMemberSearch,
+  removeMemberSearch,
+  saveCollection,
+  removeCollection,
+  collectMailSub,
+  removeCollect,
+  exportAnnouncement,
+  setShare
+} from "@/api_new/myAttention";
 
 export default {
   name: "index",
@@ -519,7 +524,6 @@ export default {
           return
         }
       }
-
       this.loadingFlag = true;
       let res = await getZtbSearch(params);
       const {status, result} = res;
@@ -671,10 +675,11 @@ export default {
       let res = await exportAnnouncement(params);
       const {success, result} = res;
       if(success){
+        this.$Message.success("导出公告成功")
         let title = result;
-        downAnnouncement({
-          path: result
-        }, title)
+        // downAnnouncement({
+        //   path: result
+        // }, title)
       }
     },
     //批量收藏功能
@@ -755,13 +760,13 @@ export default {
     //保存搜索条件
     saveSearchData(){
       if (this.procurement == 1){
-        if (this.groupData.pageTotal >= 10) {
+        if (this.groupData.pageTotal >= 10 && !this.groupFlag) {
           this.$Message.warning("最多只能添加10个分组");
           return
         }
         this.saveBiddingData();
       } else {
-        if (this.groupData.pageTotal >= 5) {
+        if (this.groupData.pageTotal >= 5 && !this.groupFlag) {
           this.$Message.warning("最多只能添加5个分组");
           return
         }
@@ -837,7 +842,6 @@ export default {
       })
     },
     saveBuildingData(){
-      debugger
       let params = {}
       params.keyword = this.setJoinValue(this.searchForm.keyword);
       if (params.keyword == "" || params.keyword.trim().length == 0) {
@@ -1020,6 +1024,7 @@ export default {
             ids: [item.id],
           }).then((res) => {
             if (res.success) {
+              this.$Message.success('删除搜索条件成功')
               this.getGroup(1);
             }
           });

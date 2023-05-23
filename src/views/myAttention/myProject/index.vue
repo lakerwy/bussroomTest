@@ -40,10 +40,11 @@
 </template>
 
 <script>
-import {getFollowList, getProjectPerson} from "@/api/myAttention";
 import { ShareModal, ReadTitle } from "@/components/contentBox/index.js"
 import { getArrayIds } from "@/utils/utils.js";
-import { markImport } from "@/api/myAttention";
+import { getProjectPerson} from "@/api/myAttention";
+
+import { getFollowList, markImport} from "@/api_new/myAttention";
 
 export default {
   name: "index",

@@ -350,18 +350,29 @@ export const clearHttpRequestingList =  function () {
     }
   }
 
-
-var token = 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZ3QiOiI1NjllMjkyZTYyZTUyNWQ4MDA1MDY0YTZjOTkyNTczMSIsImF1ZCI6InN5Z25ldyIsImNpZCI6Il9AM3pydVBlaWl1QXpDSk9CSlFydEdWWF9JMUNqclotN3RAIiwiZXhwIjoxNjg0ODI2MzgzLCJpYXQiOjE2ODQ3MzYzODMsImxhbiI6InpoX2NuIiwibHRtIjoiMjAyMy0wNS0yMiIsInBpZCI6Il9AN1dzSW80TWowZklFbjlhYm5LNHNaUS4uQCIsInJtdCI6IjEzLjIxMy42Mi4yOSIsInJvbGVzIjoiYWxsIiwidWlkIjoiX0AzenJ1UGVpaXVBeHNTc3dJZ2gxUFlIQzdEVHVNT1JRQkAiLCJ1c3IiOiJmdWJsQGNoaW5hYmlkZGluZy5jbiJ9.YSjjdwbLM-SGM9OYrOlFoPlt4-w-1ZOab3U_64igHZoy00efzmhwq_EjGjsaszzfGlSBgdhhbbmtYcr5zydXwgWFwac-HoxgMpH_j88mwCYkptJNtnd6BR_aWaQBIJbAGRt2fSAS-KKXJzA04ce8SMpti9UojqdyyWOvpPgDJgwI1SWTiVqH7dMkabyMnh3plgF9W_a3raaKrsRrzvqL2jKOI3pe752GFPQ9PoRWrm8z-CL9fP6jSSR77sZth9jHK81K3k8L_rWlzGjQ6_PuBWAAtCWeHzvPcV0tWoGELlDW3hL-DKGqdMVomKtluRvAeRb_WNCpPSlcI732y0o9OQ';
+var token = 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZ3QiOiI1NjllMjkyZTYyZTUyNWQ4MDA1MDY0YTZjOTkyNTczMSIsImF1ZCI6InN5Z25ldyIsImNpZCI6Il9AM3pydVBlaWl1QXpDSk9CSlFydEdWWF9JMUNqclotN3RAIiwiZXhwIjoxNjg0ODg5MTkwLCJpYXQiOjE2ODQ3OTkxOTAsImxhbiI6InpoX2NuIiwibHRtIjoiMjAyMy0wNS0yMiIsInBpZCI6Il9AN1dzSW80TWowZklFbjlhYm5LNHNaUS4uQCIsInJtdCI6IjU4LjQ4LjIwOS4xMzQiLCJyb2xlcyI6ImFsbCIsInVpZCI6Il9AM3pydVBlaWl1QXhzU3N3SWdoMVBZSEM3RFR1TU9SUUJAIiwidXNyIjoiZnVibEBjaGluYWJpZGRpbmcuY24ifQ.Caai5RaxuIZ6PSZkd3IZkAbI_dKsd_wyJLQGjMbwJMJUyOs-Q4OAet_5AoZIhyoSeja2X_M5yleyt5iLiy12zvlVDr0iRv-KaLE32MyDtYQ88hAK3CEaOWqtrJ2-g53KTf4oYxqvXD_f2nV2hCoxbhsqQcs0mHNaGBMXCwM3NMi563RBxb2fp7VDBYQm3o18Kb0UkZRyi3aHI7hrB4fAaiuITQ9FnY7H9tTHYKkW80_vtR4dDHj7nfVIJfIy15fj7NUjAtJO8HAynsEszk12zhiKb1cuV9TOeFU1iO1raH5j1cPObfl7IE2aJjnWWH33GYfTDa6P4Y33U5dg67qHMQ';
+var sygId = '/313035392e302e7379675f637573746f6d';
+if (Cookies.get('token')){
+    token = Cookies.get('token');
+}
+try {
+    if (_syg()){
+        sygId = _syg();
+        console.log('sygId',sygId)
+    }
+} catch (error){
+    console.log(error)
+}
 export const postAxios = function(funcode, params){
     return axios({
         method: 'post',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
         },
-        url: `${base}/313035392e302e7379675f637573746f6d/datax/json`,
+        url: `${base}${sygId}/datax/json/${funcode}`,
         data: {
             token: token,
-            funcode: funcode,
+            // funcode: funcode,
             ...params
         },
         transformRequest: [function (data) {

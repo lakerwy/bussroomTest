@@ -726,8 +726,65 @@ export const getMenuListTest = {
     ]
 }
 
+//main
+export const getTeamUserNameTest =  {
+    "success": true,
+    "message": "success",
+    "code": 200,
+    "timestamp": 1683597084012,
+    "result": [
+        {
+            "nickName": "张三-管理员",
+            "id": "1497260663767136"
+        },
+        {
+            "nickName": "测试11",
+            "id": "1528738359541856"
+        },
+        {
+            "nickName": "test",
+            "id": "1536356813635680"
+        }
+    ]
+}
+export const getMessageSendDataTest = {
+    "success": true,
+    "message": "success",
+    "code": 200,
+    "timestamp": 1683597360080,
+    "result": {
+        "content": [],
+        "pageable": {
+            "sort": {
+                "sorted": false,
+                "unsorted": true,
+                "empty": true
+            },
+            "pageSize": 10,
+            "pageNumber": 0,
+            "offset": 0,
+            "paged": true,
+            "unpaged": false
+        },
+        "last": true,
+        "totalElements": 0,
+        "totalPages": 0,
+        "first": true,
+        "sort": {
+            "sorted": false,
+            "unsorted": true,
+            "empty": true
+        },
+        "numberOfElements": 0,
+        "size": 10,
+        "number": 0,
+        "empty": true
+    }
+}
+
+/*----------------------管理员部分----------------------------*/
 //首页数据
-export const getProjectStatusTest = {
+export const getProjectStatus = {
     "success": true,
     "message": "success",
     "code": 200,
@@ -751,7 +808,7 @@ export const getProjectStatusTest = {
         }
     }
 }
-export const getProjectDataTest = {
+export const getProjectData = {
     "success": true,
     "message": "success",
     "code": 200,
@@ -777,7 +834,7 @@ export const getProjectDataTest = {
         }
     }
 }
-export const getAccountUsageTest = {
+export const getAccountUsage = {
     "success": true,
     "message": "success",
     "code": 200,
@@ -884,7 +941,7 @@ export const getAccountUsageTest = {
         "empty": false
     }
 }
-export const getApplyListTest = {
+export const getApplyList = {
     "success": true,
     "message": "success",
     "code": 200,
@@ -1011,7 +1068,7 @@ export const getApplyListTest = {
         "empty": false
     }
 }
-export const getTeamProjectDataTest = {
+export const getTeamProjectData = {
     "success": true,
     "message": "success",
     "code": 200,
@@ -1044,34 +1101,774 @@ export const getTeamProjectDataTest = {
         }
     }
 }
-//main
-export const getTeamUserNameTest =  {
+
+/*------------------------我的关注部分--------------------------*/
+export const getMerberSearch = {
     "success": true,
     "message": "success",
     "code": 200,
-    "timestamp": 1683597084012,
-    "result": [
-        {
-            "nickName": "张三-管理员",
-            "id": "1497260663767136"
-        },
-        {
-            "nickName": "测试11",
-            "id": "1528738359541856"
-        },
-        {
-            "nickName": "test",
-            "id": "1536356813635680"
-        }
-    ]
-}
-export const getMessageSendDataTest = {
-    "success": true,
-    "message": "success",
-    "code": 200,
-    "timestamp": 1683597360080,
+    "timestamp": 1684810736830,
     "result": {
-        "content": [],
+        "content": [
+            {
+                "id": "96783",
+                "createBy": null,
+                "createTime": null,
+                "updateBy": null,
+                "updateTime": null,
+                "delFlag": 0,
+                "userId": 1497260663767136,
+                "name": "工程+ 或逻辑+工程招标 货物招标 服务招标 政府采购 企业采购 招标预告 中标公示 + 内容+北京 天津 河北 山西 内蒙古 + 全部行业+ 近两周",
+                "area": "1,3,5,6,7",
+                "infoType": "1,2,3,6,7,5,4",
+                "category": null,
+                "primaryIndustry": null,
+                "secondaryIndustry": null,
+                "stage": null,
+                "searchRange": 0,
+                "type": 0,
+                "dateRange": 2,
+                "startTime": null,
+                "endTime": null,
+                "keyword": "工程",
+                "isEmail": false,
+                "isWechat": false,
+                "isSms": false,
+                "isApp": false,
+                "status": null,
+                "keywordLogic": 0,
+                "xxlx": null,
+                "bxlb": null,
+                "excludeKeyword": null
+            },
+            {
+                "id": "96786",
+                "createBy": null,
+                "createTime": null,
+                "updateBy": null,
+                "updateTime": null,
+                "delFlag": 0,
+                "userId": 1497260663767136,
+                "name": "工程 电力+ 与逻辑+工程招标 货物招标 服务招标 政府采购 企业采购 招标预告 中标公示 + 内容+其他 + 全部行业+ 近一周",
+                "area": "",
+                "infoType": "1,2,3,6,7,5,4",
+                "category": null,
+                "primaryIndustry": null,
+                "secondaryIndustry": null,
+                "stage": null,
+                "searchRange": 0,
+                "type": 0,
+                "dateRange": 1,
+                "startTime": null,
+                "endTime": null,
+                "keyword": "工程 电力",
+                "isEmail": false,
+                "isWechat": false,
+                "isSms": false,
+                "isApp": false,
+                "status": null,
+                "keywordLogic": 1,
+                "xxlx": null,
+                "bxlb": null,
+                "excludeKeyword": null
+            },
+            {
+                "id": "96794",
+                "createBy": null,
+                "createTime": null,
+                "updateBy": null,
+                "updateTime": null,
+                "delFlag": 0,
+                "userId": 1497260663767136,
+                "name": "湖北+ 与逻辑+工程招标 货物招标 服务招标 政府采购 企业采购 招标预告 中标公示 + 内容+北京 + 全部行业+ 近一周",
+                "area": "1",
+                "infoType": "1,2,3,6,7,5,4",
+                "category": null,
+                "primaryIndustry": null,
+                "secondaryIndustry": null,
+                "stage": null,
+                "searchRange": 0,
+                "type": 0,
+                "dateRange": 1,
+                "startTime": null,
+                "endTime": null,
+                "keyword": "湖北",
+                "isEmail": false,
+                "isWechat": false,
+                "isSms": false,
+                "isApp": false,
+                "status": null,
+                "keywordLogic": 1,
+                "xxlx": null,
+                "bxlb": null,
+                "excludeKeyword": null
+            },
+            {
+                "id": "96804",
+                "createBy": null,
+                "createTime": null,
+                "updateBy": null,
+                "updateTime": null,
+                "delFlag": 0,
+                "userId": 1497260663767136,
+                "name": "社区 数字+ 与逻辑+工程招标 货物招标 服务招标 政府采购 企业采购 招标预告 中标公示 + 内容+山西 + 全部行业+ 近一周",
+                "area": "6",
+                "infoType": "1,2,3,6,7,5,4",
+                "category": null,
+                "primaryIndustry": null,
+                "secondaryIndustry": null,
+                "stage": null,
+                "searchRange": 0,
+                "type": 0,
+                "dateRange": 1,
+                "startTime": null,
+                "endTime": null,
+                "keyword": "社区 数字",
+                "isEmail": false,
+                "isWechat": false,
+                "isSms": false,
+                "isApp": false,
+                "status": null,
+                "keywordLogic": 1,
+                "xxlx": null,
+                "bxlb": null,
+                "excludeKeyword": null
+            },
+            {
+                "id": "96803",
+                "createBy": null,
+                "createTime": null,
+                "updateBy": null,
+                "updateTime": null,
+                "delFlag": 0,
+                "userId": 1497260663767136,
+                "name": "公寓+ 与逻辑+工程招标 货物招标 服务招标 政府采购 企业采购 招标预告 中标公示 + 内容+内蒙古 + 全部行业+ 近一周",
+                "area": "7",
+                "infoType": "1,2,3,6,7,5,4",
+                "category": null,
+                "primaryIndustry": null,
+                "secondaryIndustry": null,
+                "stage": null,
+                "searchRange": 0,
+                "type": 0,
+                "dateRange": 1,
+                "startTime": null,
+                "endTime": null,
+                "keyword": "公寓",
+                "isEmail": false,
+                "isWechat": false,
+                "isSms": false,
+                "isApp": false,
+                "status": null,
+                "keywordLogic": 1,
+                "xxlx": null,
+                "bxlb": null,
+                "excludeKeyword": null
+            }
+        ],
+        "pageable": {
+            "sort": {
+                "sorted": true,
+                "unsorted": false,
+                "empty": false
+            },
+            "pageSize": 5,
+            "pageNumber": 0,
+            "offset": 0,
+            "paged": true,
+            "unpaged": false
+        },
+        "last": false,
+        "totalElements": 9,
+        "totalPages": 2,
+        "first": true,
+        "sort": {
+            "sorted": true,
+            "unsorted": false,
+            "empty": false
+        },
+        "numberOfElements": 5,
+        "size": 5,
+        "number": 0,
+        "empty": false
+    }
+}
+export const getZtbSearch = {
+    "status": "OK",
+    "request_id": "168480674316800211537535",
+    "result": {
+        "searchtime": 0.294007,
+        "total": 83373,
+        "num": 10,
+        "viewtotal": 5000,
+        "compute_cost": [
+            {
+                "index_name": "chinabiddingopensearch",
+                "value": 192.688
+            }
+        ],
+        "items": [
+            {
+                "category_id": "8",
+                "classb_id": "002",
+                "numa": "0.0",
+                "table_name": "ZBXX",
+                "table_name2": "ZBGG",
+                "title": "麻醉系统及病人监护仪",
+                "area_id": "5",
+                "id": "1621893308747776",
+                "publish_date": "1684806579000",
+                "index_name": "chinabiddingopensearch",
+                "is_collected": "0",
+                "url": "https://www.chinabidding.cn/zbgg/3bSb7ENC6.html"
+            },
+            {
+                "category_id": "5 3",
+                "classb_id": "001",
+                "numa": "0.0",
+                "table_name": "ZBXX",
+                "table_name2": "ZBGS",
+                "title": "蒙维公司水泥厂工具-5月结果公示（内蒙古蒙维科技有限公司）",
+                "area_id": "7",
+                "id": "2311161484",
+                "publish_date": "1684806500000",
+                "index_name": "chinabiddingopensearch",
+                "is_collected": "0",
+                "url": "https://www.chinabidding.cn/zbgs/naO7rx.html"
+            },
+            {
+                "category_id": "3 5",
+                "classb_id": "001",
+                "numa": "0.0",
+                "table_name": "ZBXX",
+                "table_name2": "ZBGS",
+                "title": "广仁寺文物保护修缮工程（监理）",
+                "area_id": "1",
+                "id": "2311161124",
+                "publish_date": "1684806385000",
+                "index_name": "chinabiddingopensearch",
+                "is_collected": "0",
+                "url": "https://www.chinabidding.cn/zbgs/naO7wr.html"
+            },
+            {
+                "category_id": "14",
+                "classb_id": "001",
+                "numa": "0.0",
+                "table_name": "ZBXX",
+                "table_name2": "ZBGG",
+                "title": "东风日产牌——川HN2223(45cd64)",
+                "area_id": "5",
+                "id": "2311159933",
+                "publish_date": "1684806038000",
+                "index_name": "chinabiddingopensearch",
+                "is_collected": "0",
+                "url": "https://www.chinabidding.cn/zbgg/naOXEV.html"
+            },
+            {
+                "category_id": "3 14",
+                "classb_id": "001,003",
+                "numa": "0.0",
+                "table_name": "ZBXX",
+                "table_name2": "ZBGG",
+                "title": "捷达牌——川H0106M(d674f6)出让公告",
+                "area_id": "5",
+                "id": "2311159922",
+                "publish_date": "1684806035000",
+                "index_name": "chinabiddingopensearch",
+                "is_collected": "0",
+                "url": "https://www.chinabidding.cn/zbgg/naOXEw.html"
+            },
+            {
+                "category_id": "14",
+                "classb_id": "003",
+                "numa": "0.0",
+                "table_name": "ZBXX",
+                "table_name2": "ZBGG",
+                "title": "广元城投工程机械设备租赁有限公司一批车辆处置(d3fc96)",
+                "area_id": "5",
+                "id": "2311159917",
+                "publish_date": "1684806031000",
+                "index_name": "chinabiddingopensearch",
+                "is_collected": "0",
+                "url": "https://www.chinabidding.cn/zbgg/naOXEe.html"
+            },
+            {
+                "category_id": "14",
+                "classb_id": "001",
+                "numa": "0.0",
+                "table_name": "ZBXX",
+                "table_name2": "ZBGG",
+                "title": "帕萨特牌——川HET133(7ac39d)",
+                "area_id": "5",
+                "id": "2311159914",
+                "publish_date": "1684806029000",
+                "index_name": "chinabiddingopensearch",
+                "is_collected": "0",
+                "url": "https://www.chinabidding.cn/zbgg/naOXEQ.html"
+            },
+            {
+                "category_id": "14",
+                "classb_id": "001",
+                "numa": "0.0",
+                "table_name": "ZBXX",
+                "table_name2": "ZBGG",
+                "title": "捷达牌——川H0509C(a42a67)",
+                "area_id": "5",
+                "id": "2311159896",
+                "publish_date": "1684806025000",
+                "index_name": "chinabiddingopensearch",
+                "is_collected": "0",
+                "url": "https://www.chinabidding.cn/zbgg/naOXoP.html"
+            },
+            {
+                "category_id": "14",
+                "classb_id": "001",
+                "numa": "0.0",
+                "table_name": "ZBXX",
+                "table_name2": "ZBGG",
+                "title": "捷达牌——川H0106D(d6aeb0)",
+                "area_id": "5",
+                "id": "2311159895",
+                "publish_date": "1684806024000",
+                "index_name": "chinabiddingopensearch",
+                "is_collected": "0",
+                "url": "https://www.chinabidding.cn/zbgg/naOXoO.html"
+            },
+            {
+                "category_id": "14",
+                "classb_id": "001",
+                "numa": "0.0",
+                "table_name": "ZBXX",
+                "table_name2": "ZBGG",
+                "title": "索兰托牌——川H0958E(eb6712)",
+                "area_id": "5",
+                "id": "2311159888",
+                "publish_date": "1684806020000",
+                "index_name": "chinabiddingopensearch",
+                "is_collected": "0",
+                "url": "https://www.chinabidding.cn/zbgg/naOXoY.html"
+            }
+        ]
+    }
+}
+export const getNzjSearch = {
+    "status": "OK",
+    "request_id": "168481008416800197065296",
+    "result": {
+        "searchtime": 0.021617,
+        "total": 25,
+        "num": 10,
+        "viewtotal": 25,
+        "compute_cost": [
+            {
+                "index_name": "chinabiddingopensearch",
+                "value": 4.934
+            }
+        ],
+        "items": [
+            {
+                "category_id": "17",
+                "classb_id": "10",
+                "numa": "2.0",
+                "table_name": "XMXX",
+                "table_name2": "VIPXM",
+                "title": "河北省唐山市2023年迁安市夏官营镇片高标准农田建设项目（改造提升）夏官营镇 、扣庄镇电力建设工程（三标段）",
+                "area_id": "5",
+                "id": "2311185533",
+                "publish_date": "1684809293000",
+                "index_name": "chinabiddingopensearch",
+                "is_collected": "0",
+                "url": "https://www.chinabidding.cn/xmxx/naPQid.html"
+            },
+            {
+                "category_id": "17",
+                "classb_id": "10",
+                "numa": "2.0",
+                "table_name": "XMXX",
+                "table_name2": "VIPXM",
+                "title": "河北省唐山市2023年迁安市夏官营镇片高标准农田建设项目（改造提升）夏官营镇 、扣庄镇电力建设工程（二标段）",
+                "area_id": "5",
+                "id": "2311185497",
+                "publish_date": "1684809258000",
+                "index_name": "chinabiddingopensearch",
+                "is_collected": "0",
+                "url": "https://www.chinabidding.cn/xmxx/naPQi5.html"
+            },
+            {
+                "category_id": "17",
+                "classb_id": "10",
+                "numa": "2.0",
+                "table_name": "XMXX",
+                "table_name2": "VIPXM",
+                "title": "河北省唐山市2023年迁安市夏官营镇片高标准农田建设项目（改造提升）夏官营镇 、扣庄镇电力建设工程（一标段）",
+                "area_id": "5",
+                "id": "2311185221",
+                "publish_date": "1684809224000",
+                "index_name": "chinabiddingopensearch",
+                "is_collected": "0",
+                "url": "https://www.chinabidding.cn/xmxx/naPQHO.html"
+            },
+            {
+                "category_id": "17",
+                "classb_id": "4",
+                "numa": "2.0",
+                "table_name": "XMXX",
+                "table_name2": "VIPXM",
+                "title": "河北省唐山市丰润区经济开发区基础设施新建项目",
+                "area_id": "5",
+                "id": "2311185185",
+                "publish_date": "1684809188000",
+                "index_name": "chinabiddingopensearch",
+                "is_collected": "0",
+                "url": "https://www.chinabidding.cn/xmxx/naPQHw.html"
+            },
+            {
+                "category_id": "17",
+                "classb_id": "10",
+                "numa": "2.0",
+                "table_name": "XMXX",
+                "table_name2": "VIPXM",
+                "title": "北京市北京中医药大学第三附属医院配电室增容改造项目",
+                "area_id": "1",
+                "id": "2311160834",
+                "publish_date": "1684806281000",
+                "index_name": "chinabiddingopensearch",
+                "is_collected": "0",
+                "url": "https://www.chinabidding.cn/xmxx/naO7eK.html"
+            },
+            {
+                "category_id": "17",
+                "classb_id": "10",
+                "numa": "2.0",
+                "table_name": "XMXX",
+                "table_name2": "VIPXM",
+                "title": "北京市中关村平谷农业科技园区配套电力设施工程",
+                "area_id": "1",
+                "id": "2311158573",
+                "publish_date": "1684805622000",
+                "index_name": "chinabiddingopensearch",
+                "is_collected": "0",
+                "url": "https://www.chinabidding.cn/xmxx/naOXNP.html"
+            },
+            {
+                "category_id": "17",
+                "classb_id": "10",
+                "numa": "2.0",
+                "table_name": "XMXX",
+                "table_name2": "VIPXM",
+                "title": "北京市公安局东城分局刑事科学技术用房改造外电源工程",
+                "area_id": "1",
+                "id": "2311157852",
+                "publish_date": "1684805441000",
+                "index_name": "chinabiddingopensearch",
+                "is_collected": "0",
+                "url": "https://www.chinabidding.cn/xmxx/naOXVi.html"
+            },
+            {
+                "category_id": "17",
+                "classb_id": "10",
+                "numa": "2.0",
+                "table_name": "XMXX",
+                "table_name2": "VIPXM",
+                "title": "河北省秦皇岛市耀华项目红线外电力配套工程",
+                "area_id": "5",
+                "id": "2310997613",
+                "publish_date": "1684739227000",
+                "index_name": "chinabiddingopensearch",
+                "is_collected": "0",
+                "url": "https://www.chinabidding.cn/xmxx/naOWxG.html"
+            },
+            {
+                "category_id": "17",
+                "classb_id": "10",
+                "numa": "2.0",
+                "table_name": "XMXX",
+                "table_name2": "VIPXM",
+                "title": "山西省晋中市国网山西省电力公司介休市供电公司昌盛煤气化110KV电源线路工程",
+                "area_id": "6",
+                "id": "2310983276",
+                "publish_date": "1684735964000",
+                "index_name": "chinabiddingopensearch",
+                "is_collected": "0",
+                "url": "https://www.chinabidding.cn/xmxx/naOHat.html"
+            },
+            {
+                "category_id": "17",
+                "classb_id": "10",
+                "numa": "2.0",
+                "table_name": "XMXX",
+                "table_name2": "VIPXM",
+                "title": "山西省太原市万景苑（三期）住宅项目供电工程",
+                "area_id": "6",
+                "id": "2310277882",
+                "publish_date": "1684478742000",
+                "index_name": "chinabiddingopensearch",
+                "is_collected": "0",
+                "url": "https://www.chinabidding.cn/xmxx/nadfYc.html"
+            }
+        ],
+        "facet": []
+    },
+    "errors": [],
+    "tracer": "",
+    "ops_request_misc": "%7B%22request%5Fid%22%3A%22168481008416800197065296%22%2C%22scm%22%3A%2220140713.130003677..%22%7D"
+}
+export const saveMemberSearch = {
+    "success": true,
+    "message": "保存搜索条件成功",
+    "code": 200,
+    "timestamp": 1684811084099,
+    "result": null
+}
+
+export const getMyVisit = {
+    "success": true,
+    "message": "success",
+    "code": 200,
+    "timestamp": 1684825986027,
+    "result": {
+        "content": [
+            {
+                "publishDate": "2022-07-20 00:00:00",
+                "lastModify": "2022-07-20 17:06:20",
+                "title": " 关于【永修特教中央和省级补助资金外墙改造项目的预算财审】中选结果的公告(永修特教中央和省级补助资金外墙改造项目)",
+                "infoType": 4,
+                "areaName": "江西",
+                "tableName": "ZBXX",
+                "tableName2": "ZBGS",
+                "classbId": "001",
+                "areaId": "15",
+                "webUrl": "www.chinabidding.cn/zbgs/ntW5bQ.html",
+                "infoId": "2209187169",
+                "numa": null,
+                "id": "1542740143770464",
+                "name": "张三-管理员",
+                "collectUserId": null,
+                "createTime": "2023-04-24 15:17:07",
+                "delFlag": null,
+                "signFlag": null,
+                "contactName": null,
+                "companyName": null,
+                "job": null,
+                "isCollected": "1506863363391872"
+            },
+            {
+                "publishDate": "2022-07-20 00:00:00",
+                "lastModify": "2022-09-08 15:44:24",
+                "title": "广州市药品检验所办公家具定点采购定点议价成交公告(DDYJ-2022-506142)",
+                "infoType": 4,
+                "areaName": "广东",
+                "tableName": "ZBXX",
+                "tableName2": "ZBGS",
+                "classbId": "001",
+                "areaId": "20",
+                "webUrl": "www.chinabidding.cn/zbgs/ntW5Be.html",
+                "infoId": "2209187109",
+                "numa": null,
+                "id": "1537668882107232",
+                "name": "张三-管理员",
+                "collectUserId": null,
+                "createTime": "2023-03-27 15:34:20",
+                "delFlag": null,
+                "signFlag": null,
+                "contactName": null,
+                "companyName": null,
+                "job": null,
+                "isCollected": "1504824161992800"
+            },
+            {
+                "publishDate": "2022-07-20 00:00:00",
+                "lastModify": "2022-08-24 10:19:35",
+                "title": "上海市嘉定区桃园幼儿园（0109-15地块幼儿园）窗帘项目更正公告",
+                "infoType": 1,
+                "areaName": "上海",
+                "tableName": "ZBXX",
+                "tableName2": "ZBGG",
+                "classbId": "001",
+                "areaId": "2",
+                "webUrl": "www.chinabidding.cn/zbgg/ntW5uA.html",
+                "infoId": "2209186116",
+                "numa": null,
+                "id": "1536370222828320",
+                "name": "张三-管理员",
+                "collectUserId": null,
+                "createTime": "2023-03-20 11:33:31",
+                "delFlag": null,
+                "signFlag": null,
+                "contactName": null,
+                "companyName": null,
+                "job": null,
+                "isCollected": "0"
+            },
+            {
+                "publishDate": "2022-07-20 00:00:00",
+                "lastModify": "2022-08-24 10:19:37",
+                "title": "罗阳第二中学美术楼、蕙竹楼周边地坪改造工程采购工程设计服务",
+                "infoType": 3,
+                "areaName": "广东",
+                "tableName": "ZBXX",
+                "tableName2": "ZBGG",
+                "classbId": "003",
+                "areaId": "20",
+                "webUrl": "www.chinabidding.cn/zbgg/ntW5aH.html",
+                "infoId": "2209186362",
+                "numa": null,
+                "id": "1536370218634016",
+                "name": "张三-管理员",
+                "collectUserId": null,
+                "createTime": "2023-03-20 11:33:29",
+                "delFlag": null,
+                "signFlag": null,
+                "contactName": null,
+                "companyName": null,
+                "job": null,
+                "isCollected": "0"
+            },
+            {
+                "publishDate": "2022-07-20 00:00:00",
+                "lastModify": "2022-08-24 10:19:37",
+                "title": "广州科学城中学物业管理服务定点采购定点议价成交公告(DDYJ-2022-505653)",
+                "infoType": 4,
+                "areaName": "广东",
+                "tableName": "ZBXX",
+                "tableName2": "ZBGS",
+                "classbId": "001",
+                "areaId": "20",
+                "webUrl": "www.chinabidding.cn/zbgs/ntW5Bu.html",
+                "infoId": "2209187122",
+                "numa": null,
+                "id": "1536370212342560",
+                "name": "张三-管理员",
+                "collectUserId": null,
+                "createTime": "2023-03-20 11:33:27",
+                "delFlag": null,
+                "signFlag": null,
+                "contactName": null,
+                "companyName": null,
+                "job": null,
+                "isCollected": "0"
+            },
+            {
+                "publishDate": "2022-07-20 00:00:00",
+                "lastModify": "2022-08-18 13:51:03",
+                "title": "广州市南沙区南沙街道城乡建设与土地整备中心资产评估服务定点采购定点议价成交公告(DDYJ-2022-490072)",
+                "infoType": 4,
+                "areaName": "广东",
+                "tableName": "ZBXX",
+                "tableName2": "ZBGS",
+                "classbId": "001",
+                "areaId": "20",
+                "webUrl": "www.chinabidding.cn/zbgs/ntW5N8.html",
+                "infoId": "2209187035",
+                "numa": null,
+                "id": "1536370153622304",
+                "name": "张三-管理员",
+                "collectUserId": null,
+                "createTime": "2023-03-20 11:32:59",
+                "delFlag": null,
+                "signFlag": null,
+                "contactName": null,
+                "companyName": null,
+                "job": null,
+                "isCollected": "0"
+            },
+            {
+                "publishDate": "2022-07-20 00:00:00",
+                "lastModify": "2022-07-20 17:06:20",
+                "title": "2022年仪征经济开发集团有限公司公开招聘工作人员录用人员名单",
+                "infoType": 1,
+                "areaName": "江苏",
+                "tableName": "ZBXX",
+                "tableName2": "ZBGG",
+                "classbId": "001",
+                "areaId": "11",
+                "webUrl": "www.chinabidding.cn/zbgg/ntW53T.html",
+                "infoId": "2209185508",
+                "numa": null,
+                "id": "1536370143136576",
+                "name": "张三-管理员",
+                "collectUserId": null,
+                "createTime": "2023-03-20 11:32:54",
+                "delFlag": null,
+                "signFlag": null,
+                "contactName": null,
+                "companyName": null,
+                "job": null,
+                "isCollected": "1506863363391584"
+            },
+            {
+                "publishDate": "2022-07-20 00:00:00",
+                "lastModify": "2022-09-08 14:39:05",
+                "title": "佛山市顺德区市场监督管理局大良市场监督管理所印刷服务定点采购定点议价成交公告(DDYJ-2022-505736)",
+                "infoType": 4,
+                "areaName": "广东",
+                "tableName": "ZBXX",
+                "tableName2": "ZBGS",
+                "classbId": "001",
+                "areaId": "20",
+                "webUrl": "www.chinabidding.cn/zbgs/ntW5cX.html",
+                "infoId": "2209187099",
+                "numa": null,
+                "id": "1530382566558560",
+                "name": "张三-管理员",
+                "collectUserId": null,
+                "createTime": "2023-02-15 10:27:54",
+                "delFlag": null,
+                "signFlag": null,
+                "contactName": null,
+                "companyName": null,
+                "job": null,
+                "isCollected": "1503388829221024"
+            },
+            {
+                "publishDate": "2022-07-20 00:00:00",
+                "lastModify": "2022-09-08 14:39:05",
+                "title": "佛山市顺德区市场监督管理局大良市场监督管理所印刷服务定点采购定点议价成交公告(DDYJ-2022-505736)",
+                "infoType": 4,
+                "areaName": "广东",
+                "tableName": "ZBXX",
+                "tableName2": "ZBGS",
+                "classbId": "001",
+                "areaId": "20",
+                "webUrl": "www.chinabidding.cn/zbgs/ntW5cX.html",
+                "infoId": "2209187099",
+                "numa": null,
+                "id": "1530382564461344",
+                "name": "张三-管理员",
+                "collectUserId": null,
+                "createTime": "2023-02-15 10:27:53",
+                "delFlag": null,
+                "signFlag": null,
+                "contactName": null,
+                "companyName": null,
+                "job": null,
+                "isCollected": "1503388829221024"
+            },
+            {
+                "publishDate": "2022-07-20 00:00:00",
+                "lastModify": "2022-09-08 14:39:05",
+                "title": "佛山市顺德区市场监督管理局大良市场监督管理所印刷服务定点采购定点议价成交公告(DDYJ-2022-505736)",
+                "infoType": 4,
+                "areaName": "广东",
+                "tableName": "ZBXX",
+                "tableName2": "ZBGS",
+                "classbId": "001",
+                "areaId": "20",
+                "webUrl": "www.chinabidding.cn/zbgs/ntW5cX.html",
+                "infoId": "2209187099",
+                "numa": null,
+                "id": "1530382562364256",
+                "name": "张三-管理员",
+                "collectUserId": null,
+                "createTime": "2023-02-15 10:27:53",
+                "delFlag": null,
+                "signFlag": null,
+                "contactName": null,
+                "companyName": null,
+                "job": null,
+                "isCollected": "1503388829221024"
+            }
+        ],
         "pageable": {
             "sort": {
                 "sorted": false,
@@ -1084,18 +1881,18 @@ export const getMessageSendDataTest = {
             "paged": true,
             "unpaged": false
         },
-        "last": true,
-        "totalElements": 0,
-        "totalPages": 0,
+        "last": false,
+        "totalElements": 45,
+        "totalPages": 5,
         "first": true,
         "sort": {
             "sorted": false,
             "unsorted": true,
             "empty": true
         },
-        "numberOfElements": 0,
+        "numberOfElements": 10,
         "size": 10,
         "number": 0,
-        "empty": true
+        "empty": false
     }
 }

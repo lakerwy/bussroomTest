@@ -193,7 +193,7 @@ import { ContentBox, QuantityBox, BrowselistBox, TeamViewsBox } from "../../comp
 import PlatformBox from "./components/platformBox"
 import UserInfo from "./components/userInfo"
 import ActiveBox from "./components/activeBox"
-import {getAccountUsage, getApplyList, getProjectData, getProjectStatus, getTeamProjectData} from "@/api/homepage";
+// import {getAccountUsage, getApplyList, getProjectData, getProjectStatus, getTeamProjectData} from "@/api/homepage";
 import {
   getAccountBalance,
   getMyCollect,
@@ -209,12 +209,14 @@ import { setFreeMask, dateFormat } from "@/utils/utils.js";
 import AmountBox from "./components/amountBox"
 
 import {
-  getProjectStatusTest,
-  getProjectDataTest,
-  getAccountUsageTest,
-  getApplyListTest,
-  getTeamProjectDataTest,
-} from '@/test/index'
+  getProjectStatus,
+  getProjectData,
+  getAccountUsage,
+  getApplyList,
+  getTeamProjectData,
+} from "@/api_new/index";
+
+
 
 export default {
   components: {
@@ -510,8 +512,7 @@ export default {
       this.couponExpire = this.userInfoDetail.couponExpire;
     },
     async getProjectStatus(){
-      // let res = await getProjectStatus();
-      let res = getProjectStatusTest;
+      let res = await getProjectStatus();
       const {success, result} = res;
       if(success){
         // this.awardData[0].num = result.bidWinning.bidnum;
@@ -531,8 +532,7 @@ export default {
       }
     },
     async getProjectData(){
-      // let res = await getProjectData();
-      let res = getProjectDataTest;
+      let res = await getProjectData();
       const {success, result} = res;
       if(success){
         this.quantityData[0].price = result.visitData.todayVisitNum;
@@ -612,8 +612,7 @@ export default {
         pageSize: 4,
         pageNumber: 1,
       }
-      // let res = await getAccountUsage(params);
-      let res = getAccountUsageTest;
+      let res = await getAccountUsage(params);
       const {success, result} = res;
       if(success){
         this.platTableData = result.content;
@@ -627,8 +626,7 @@ export default {
         pageSize: 4,
         pageNumber: 1,
       }
-      // let res = await getApplyList(params);
-      let res = getApplyListTest;
+      let res = await getApplyList(params);
       const {success, result} = res;
       if(success){
         this.platTableData2 = result.content.map(item=>{
@@ -642,8 +640,7 @@ export default {
     },
     //获取团队项目数据统计
     async getTeamProjectData(){
-      // let res = await getTeamProjectData();
-      let res = getTeamProjectDataTest;
+      let res = await getTeamProjectData();
       const {success, result} = res;
       if(success){
         this.teamViewData[0].todayNum = result.visitData.todayVisitNum;

@@ -261,7 +261,6 @@ import Cookies from "js-cookie";
 import util from "@/libs/util.js";
 import {
   ws,
-  getMessageSendData,
   getOtherSet,
   ticketLogout, // 退出登录
 } from "@/api/index";
@@ -269,14 +268,11 @@ import SockJS from "sockjs-client";
 import stompOld from "@/libs/stomp.js";
 
 import axios from "axios";
-import {getTeamUserName} from "@/api/account";
+// import {getTeamUserName} from "@/api/account";
 import { mapMutations } from "vuex";
 import { FreeMemberTips } from "@/components/contentBox/index.js"
 
-import {
-  getTeamUserNameTest,
-  getMessageSendDataTest
-} from '@/test/index'
+import {getTeamUserName,getMessageSendData} from "@/api_new/index"
 
 var Stomp = stompOld.Stomp;
 var client;
@@ -369,7 +365,7 @@ export default {
   },
   methods: {
     ...mapMutations(["setTeamUserName"]),
-    init() {
+    async init() {
       this.$store.commit("getNickName");
       // 菜单
       let pathArr = util.setCurrentPath(this, this.$route.name);
@@ -395,7 +391,9 @@ export default {
           this.$store.commit("setMessageCount", res.result.totalElements);
         }
       });*/
-      let res = getMessageSendDataTest;
+      let res = getMessageSendData({
+        userId: userInfo.id,
+      });
       if (res.success) {
         this.$store.commit("setMessageCount", res.result.totalElements);
       }
@@ -533,8 +531,7 @@ export default {
     //获取团队用户昵称
     async getTeamUserName(){
       // if (!JSON.parse(this.getStore("userInfo")).type) return
-      // let res = await getTeamUserName();
-      let res = getTeamUserNameTest;
+      let res = await getTeamUserName();
       const {success, result} = res;
       if (success){
         this.setTeamUserName(result);
