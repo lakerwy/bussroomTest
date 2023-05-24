@@ -122,14 +122,13 @@
 
 <script>
 import { timeRange, regionData, contentRange, columnType, informationType, areaData, projectPhase, category1Data} from "@/utils/const/attention";
-import {getMySubscribe} from "@/api/mySubscript";
-import {getMySub} from "@/api/homepage";
 import { deepClone, setProjectType, filterDict, dateFormat, setAssignObj } from "@/utils/utils.js";
 import {mapMutations} from "vuex";
-import {downAnnouncement, exportAnnouncement, setShare} from "@/api/myAttention";
-import {collectMailSub } from "@/api/index.js";
 import { ShareModal, ReadTitle } from "@/components/contentBox/index.js"
-import {putGroup} from "@/api/index";
+import {downAnnouncement} from "@/api/myAttention";
+
+import {exportAnnouncement, setShare, collectMailSub} from "@/api_new/myAttention";
+import {getMySubscribe, getMySub,putGroup} from "@/api_new/mySubscript";
 
 export default {
   name: "index",
@@ -554,9 +553,10 @@ export default {
       const {success, result} = res;
       if(success){
         let title = result;
-        downAnnouncement({
-          path: result
-        }, title)
+        this.$Message.success("导出公告成功")
+        // downAnnouncement({
+        //   path: result
+        // }, title)
       }
     },
     handleSelectChange(selection){

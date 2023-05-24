@@ -116,10 +116,10 @@
 <script>
 import {initEcharts} from "@/utils/chart";
 import echartOption from "./echartOption";
-
 import * as echarts from "echarts/core";  //引词云时需引入这个
 import "echarts-wordcloud";
-import {applyReport, downReport, getBehaviorReport} from "../../../api/myApplication";
+
+import {applyReport, downReport, getBehaviorReport} from "@/api_new/index";
 
 export default {
   name: "index",

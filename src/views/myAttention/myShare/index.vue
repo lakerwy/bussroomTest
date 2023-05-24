@@ -101,12 +101,18 @@
 </template>
 
 <script>
+import {downAnnouncement} from "@/api/myAttention";
 import {  getArrayIds } from "@/utils/utils.js";
 import { columnType, informationType, timeRange } from "@/utils/const/attention";
-import {downAnnouncement, exportAnnouncement, getMyShareList, removeShare} from "@/api/myAttention";
 import {setColumn} from "./js/columns";
 import {mapState} from "vuex";
 import { ShareModal, ReadTitle } from "@/components/contentBox/index.js"
+
+import {
+  getMyShareList,
+  removeShare,
+  exportAnnouncement,
+} from "@/api_new/myAttention";
 
 export default {
   name: "index",
@@ -204,11 +210,12 @@ export default {
       const {success, result} = res;
       if(success){
         let title = "招标与采购导出.xlsx"
-        downAnnouncement({
-          path: result
-        }, title).then(()=>{
-          this.$Message.success("导出成功");
-        })
+        this.$Message.success("导出公告成功")
+        // downAnnouncement({
+        //   path: result
+        // }, title).then(()=>{
+        //   this.$Message.success("导出成功");
+        // })
       }
     },
     //勾选

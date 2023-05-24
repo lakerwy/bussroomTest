@@ -1,8 +1,10 @@
 // 统一请求路径前缀在libs/axios.js中修改
 import { postAxios } from '@/libs/axios';
-import {
-    baseURL
-} from '@/api/baseURL'
+
+//获取绑定公众号微信二维码
+export const toBindWechat = (params) => {
+    return postAxios('sws_to_bind_wechat', params)
+}
 
 //获取用户信息
 export const getSwsuserInfo = (params) => {
@@ -43,4 +45,18 @@ export const getApplyList = (params) => {
 //首页-获取团队项目数据统计
 export const getTeamProjectData = (params) => {
     return postAxios('sws_get_team_project_data', params)
+}
+
+/*-----------------------我的应用-定制行为报告------------------------------*/
+// 是否可以申请报告
+export const applyReport = (params) => {
+    return postAxios('sws_can_applay_report', params)
+}
+// 申请定制化行为报告
+export const getBehaviorReport = (params) => {
+    return postAxios('sws_applay_report', params)
+}
+// 下载报告
+export const downReport = (params) => {
+    return postAxios('sws_down_report', params)
 }

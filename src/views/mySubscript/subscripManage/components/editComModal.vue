@@ -180,10 +180,11 @@
 <script>
 import {columnType, contentRange, informationType, projectPhase, regionData, category1Data, category2Data} from "@/utils/const/attention";
 import {setAssignObj} from "@/utils/utils";
-import {putGroup} from "@/api/index";
-import {getPeerKeyWord} from "@/api/mySubscript";
 import Cookies from "js-cookie";
-import { saveSearch, userInfo, toBindWechat, } from "@/api/index.js";
+
+import {getSwsuserInfo as userInfo, toBindWechat} from "@/api_new/index";
+import {putGroup,getPeerKeyWord} from "@/api_new/mySubscript";
+
 
 export default {
   props: {

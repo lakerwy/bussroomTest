@@ -241,11 +241,11 @@
 <script>
 import { columnType, contentRange, informationType, projectPhase, regionData, category1Data, category2Data } from "@/utils/const/attention";
 import { PromptBox } from "@/components/contentBox/index.js"
-import { saveSearch, userInfo, toBindWechat, } from "@/api/index.js";
-import { getSwsuserInfo } from "@/api/account";
-import { getZbPreview, getNzjPreview } from "@/api/mySubscript";
 import {mapMutations} from "vuex";
 import Cookies from "js-cookie";
+
+import {getSwsuserInfo as userInfo, toBindWechat} from "@/api_new/index";
+import {saveSearch, getZbPreview, getNzjPreview } from "@/api_new/mySubscript";
 
 export default {
   components: {
@@ -465,7 +465,9 @@ export default {
           isApp: false,
         }
       }
-      document.getElementsByClassName("single-page-con")[0].scrollTo(0,0);
+      this.$nextTick(()=>{
+        document.getElementsByClassName("single-page-con")[0].scrollTo(0,0);
+      })
     },
     // 添加
     setKeyword(index){

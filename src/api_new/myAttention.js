@@ -70,3 +70,16 @@ export const getMyExportDetail= (params) => {
     return postAxios('sws_get_my_export_detail', params)
 }
 /*---------------------我的关注-我的收藏-------------------------*/
+//我的收藏列表
+export const getCollectList= (params) => {
+    return postAxios('sws_get_collect_list', params)
+}
+/*---------------------我的关注-我的分享-------------------------*/
+//我的分享列表
+export const getMyShareList= (params) => {
+    return postAxios('sws_my_share_list', params)
+}
+//移除分享
+export const removeShare= (params) => {
+    return postAxios('sws_remove_share', params)
+}

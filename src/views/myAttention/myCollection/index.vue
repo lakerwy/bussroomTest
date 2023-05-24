@@ -111,12 +111,20 @@
 </template>
 
 <script>
+
+import {downAnnouncement } from "@/api/myAttention";
 import { deepClone, filterDict, getArrayIds } from "@/utils/utils.js";
-import {downAnnouncement, exportAnnouncement, getCollectList, markImport, removeCollect } from "@/api/myAttention";
 import {infoTypeList , columnType, informationType, timeRange} from "@/utils/const/attention";
 import {setColumn} from "./js/columns";
 import {mapMutations, mapState} from "vuex";
 import { ShareModal, ReadTitle } from "@/components/contentBox/index.js"
+
+import {
+  getCollectList,
+  markImport,
+  removeCollect,
+  exportAnnouncement,
+} from "@/api_new/myAttention";
 
 export default {
   name: "index",
@@ -234,11 +242,12 @@ export default {
       const {success, result} = res;
       if(success){
         let title = "招标与采购导出.xlsx"
-        downAnnouncement({
-          path: result
-        }, title).then(()=>{
-          this.$Message.success("导出成功");
-        })
+        this.$Message.success("导出公告成功")
+        // downAnnouncement({
+        //   path: result
+        // }, title).then(()=>{
+        //   this.$Message.success("导出成功");
+        // })
       }
     },
     pickDate(arr) {

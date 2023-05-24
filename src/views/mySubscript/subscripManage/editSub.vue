@@ -31,15 +31,15 @@
 </template>
 
 <script>
-import {setShare} from "@/api/myAttention";
 import editComModal from "./components/editComModal";
 import {setColumn} from "./js/columns";
-import {getMySubscribe} from "@/api/mySubscript";
 import {infoTypeList, areaData} from "@/utils/const/attention";
 import {filterDictList, getArrayIds, deepClone} from "@/utils/utils";
-import { removeGroup } from "@/api/index.js";
 import { ShareModal, ReadTitle } from "@/components/contentBox/index.js"
 import {mapMutations} from "vuex";
+
+import {setShare} from "@/api_new/myAttention";
+import {getMySubscribe, removeGroup} from "@/api_new/mySubscript";
 
 export default {
   name: "editSub",
