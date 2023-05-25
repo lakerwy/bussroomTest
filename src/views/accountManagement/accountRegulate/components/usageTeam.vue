@@ -45,7 +45,8 @@
 <script>
 import {timeRange} from "@/utils/const/attention";
 import {mapState, mapMutations, mapGetters} from "vuex";
-import {getAccountUsage} from "@/api/homepage";
+
+import { getAccountUsage } from "@/api_new/index";
 
 export default {
   name: "usageTeam",

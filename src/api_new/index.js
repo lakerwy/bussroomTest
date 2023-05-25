@@ -24,7 +24,10 @@ export const getTeamUserName = (params) => {
 export const getMessageSendData = (params) => {
     return postAxios('sws_get_message_send_data', params)
 }
-
+//设置公告已读
+export const getIsRead = (params) => {
+    return postAxios('sws_get_is_read', params)
+}
 /*----------------首页管理员部分接口--------------------*/
 //首页-获取项目情况
 export const getProjectStatus = (params) => {
@@ -59,4 +62,60 @@ export const getBehaviorReport = (params) => {
 // 下载报告
 export const downReport = (params) => {
     return postAxios('sws_down_report', params)
+}
+
+/*-----------------------账号安全-账号管理------------------------------*/
+//编辑子账号信息
+export const editUserInfo = (params) => {
+    return postAxios('sws_edit_user', params)
+}
+//发送验证码
+export const sendVerifyCode = (params) => {
+    return postAxios('sws_send_verify_code', params)
+}
+//更新用户手机或邮箱信息
+export const updateUserInfo = (params) => {
+    return postAxios('sws_update_user', params)
+}
+//重置密码
+export const setRestPwd = (params) => {
+    return postAxios('sws_set_rest_pwd', params)
+}
+//修改用户密码
+export const changePass = (params) => {
+    return postAxios('sws_modify_pass', params)
+}
+//获取我的团队账号概览
+export const getAccountInfo = (params) => {
+    return postAxios('sws_account_overview', params)
+}
+//添加子账号
+export const addUser = (params) => {
+    return postAxios('sws_add_user', params)
+}
+// 企业微信邀请码拿ticket
+// GET /xboot/ticket/create/{str}
+export const create = (params) => {
+    return postAxios('sws_create_ticket', params)
+}
+// 生成企业微信邀请码
+// /xboot/ticket/createQrcode?inviterId=
+export const getInviteCode = (params) => {
+    return postAxios('sws_create_qrcode', params)
+}
+//获取子账号权限配置
+export const getUserRights = (params) => {
+    return postAxios('sws_get_user_rights', params)
+}
+//移除子账号用户
+export const detachUser = (params) => {
+    return postAxios('sws_remove_user', params)
+}
+//审核通过-驳回
+export const updateApplyLog = (params) => {
+    return postAxios('sws_update_apply_log', params)
+}
+//历史操作记录
+export const getHistoryOperList = (params) => {
+    return postAxios('sws_get_log_list', params)
 }

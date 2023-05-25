@@ -17,7 +17,7 @@
 
 <script>
 import {mapMutations, mapState} from "vuex";
-import {getIsRead} from "@/api/myAttention";
+import {getIsRead} from "@/api_new/index";
 
 export default {
   name: "freeMemberTips",

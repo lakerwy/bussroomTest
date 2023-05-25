@@ -93,11 +93,11 @@
 </template>
 
 <script>
-import {detachUser,} from "@/api/index";
-import {getUserRights, editUserInfo} from "@/api/account";
 import {mapState} from "vuex";
 import Cookies from "js-cookie";
 import REG from "@/libs/commonExp";
+
+import { getUserRights,detachUser, editUserInfo} from "@/api_new/index";
 
 export default {
   props: ["visitLimitNum","exportLimitNum"],

@@ -206,9 +206,9 @@
 </template>
 
 <script>
+
+import {  getOtherSet, ticketLogout } from "@/api/index";
 import CountDownButton from "@/views/my-components/xboot/count-down-button";
-import { changePass, getOtherSet, ticketLogout, userInfo, toBindWechat, } from "@/api/index";
-import { getSwsuserInfo, sendVerifyCode, editUserInfo, updateUserInfo, setRestPwd } from "@/api/account";
 import SetPassword from "@/views/my-components/xboot/set-password";
 import accountMyTeam from "./accountMyTeam";
 import applayQuota from "./applayQuota";
@@ -216,6 +216,16 @@ import Cookies from "js-cookie";
 import {validateMobile, validateEmail} from "@/libs/validate";
 import REG from "@/libs/commonExp";
 import {mapMutations} from "vuex";
+
+import {
+  getSwsuserInfo,
+  toBindWechat,
+  editUserInfo,
+  sendVerifyCode,
+  updateUserInfo,
+  setRestPwd,
+  changePass
+} from "@/api_new/index";
 
 export default {
   name: "index",
@@ -243,7 +253,7 @@ export default {
       }
     };
     const validateInEamil = (rule, value, callback) => {
-      if (value && value.match(REG.reg.email) == null) {
+      if ((value && value.match(REG.reg.email) == null)) {
         callback(new Error("输入的邮箱格式有误,请重新输入！"));
       } else {
         callback();
@@ -752,7 +762,7 @@ export default {
       // 定时获取是否绑定微信
       clearInterval(this.timeId)
       this.timeId = setInterval(() => {
-        userInfo().then((res) => {
+        getSwsuserInfo().then((res) => {
           if(res.code === 404){
             clearInterval(this.timeId)
           }

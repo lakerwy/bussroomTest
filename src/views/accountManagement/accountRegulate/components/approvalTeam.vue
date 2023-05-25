@@ -40,8 +40,8 @@
 
 <script>
 import {mapState} from "vuex";
-import {getApplyList} from "@/api/homepage";
-import {updateApplyLog} from "@/api/account";
+
+import { getApplyList,updateApplyLog } from "@/api_new/index";
 
 export default {
   data(){

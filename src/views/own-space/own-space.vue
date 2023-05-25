@@ -290,8 +290,6 @@
     changeMobile,
     toBindWechat,
     unbindWechat,
-    getAllOrder,
-    getOtherSet
   } from "@/api/index";
   import {
     validateMobile
@@ -299,9 +297,7 @@
   import CountDownButton from "@/views/my-components/xboot/count-down-button";
   import uploadPicThumb from "@/views/my-components/xboot/upload-pic-thumb";
   import checkPassword from "@/views/my-components/xboot/check-password";
-  import checkEmpty from "@/libs/validate.js";
   import Cookies from "js-cookie";
-  import messageVue from "../message/message.vue";
   export default {
     components: {
       uploadPicThumb,

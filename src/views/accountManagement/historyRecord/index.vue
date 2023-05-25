@@ -55,9 +55,10 @@
 
 <script>
 import {timeRange} from "@/utils/const/attention";
-import {getHistoryOperList} from "@/api/account";
 import { deepClone } from "@/utils/utils.js";
 import {mapMutations} from "vuex";
+
+import { getHistoryOperList } from "@/api_new/index";
 
 export default {
   name: "index",

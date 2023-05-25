@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import {getIsRead} from "@/api/myAttention";
+import {getIsRead} from "@/api_new/index";
 import {mapMutations} from "vuex";
 
 export default {

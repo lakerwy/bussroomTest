@@ -21,7 +21,7 @@
         <div>
           <Table class="my-table" :columns="columns" :data="tableData" :loading="loadingFlag" @on-selection-change="handleSelectChange">
             <template slot-scope="{ row }" slot="title">
-              <ReadTitle :url="row.webUrl" :title="row.projectName" :id="row.id"></ReadTitle>
+              <ReadTitle :url="row.webUrl" :title="row.projectName" :id="row.infoId"></ReadTitle>
             </template>
           </Table>
         </div>

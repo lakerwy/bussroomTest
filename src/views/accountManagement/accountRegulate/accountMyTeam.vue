@@ -137,14 +137,19 @@
 </template>
 
 <script>
-import {addUser,create,getInviteCode} from "@/api/index";
 import usageTeam from "./components/usageTeam";
 import permissTeam from "./components/permissTeam";
 import approvalTeam from "./components/approvalTeam";
-import {getAccountInfo} from "@/api/account";
 import {validateMobile, validatePassword, checkEmpty} from "@/libs/validate";
 import {mapMutations} from "vuex";
 import Cookies from "js-cookie";
+
+import {
+  getAccountInfo,
+  addUser,
+  create,
+  getInviteCode
+} from "@/api_new/index";
 
 export default {
   name: "accountMyTeam",
