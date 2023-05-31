@@ -276,7 +276,6 @@
 
 <script>
   import {
-    userInfo,
     userInfoEdit,
     relatedInfo,
     unRelate,
@@ -298,6 +297,8 @@
   import uploadPicThumb from "@/views/my-components/xboot/upload-pic-thumb";
   import checkPassword from "@/views/my-components/xboot/check-password";
   import Cookies from "js-cookie";
+
+  import {getSwsuserInfo as userInfo} from "@/api_new/index"
   export default {
     components: {
       uploadPicThumb,
@@ -564,7 +565,6 @@
                 userInfo[attr] = "";
               }
             }
-
             this.userForm = userInfo;
             this.managerFlag = this.userForm.type === 1 ? true : false;
             console.log(this.managerFlag);
@@ -582,9 +582,6 @@
               this.userForm.typeTxt = "管理员";
             }
           }
-
-
-
         });
         // let userInfo = JSON.parse(str);
 
@@ -595,35 +592,16 @@
             v[attr] = "";
           }
         }
-        relatedInfo(v.username).then(res => {
-          if (res.success) {
-            let r = res.result;
-            this.github.related = r.github;
-            this.github.id = r.githubId;
-            this.github.username = r.githubUsername;
-            this.qq.related = r.qq;
-            this.qq.id = r.qqId;
-            this.qq.username = r.qqUsername;
-            this.weibo.related = r.weibo;
-            this.weibo.id = r.weiboId;
-            this.weibo.username = r.weiboUsername;
-            this.wechat.related = r.wechat;
-            this.wechat.id = r.wechatId;
-            this.wechat.username = r.wechatUsername;
-          } else {
-            this.$Message.error("加载绑定第三方账号信息失败");
-          }
-        });
-        let messageOpen = this.getStore("messageOpen");
-        if (
-          messageOpen != "" &&
-          messageOpen != undefined &&
-          messageOpen != null
-        ) {
-          this.messageOpen = Number(messageOpen);
-        } else {
-          this.setStore("messageOpen", 1);
-        };
+        // let messageOpen = this.getStore("messageOpen");
+        // if (
+        //   messageOpen != "" &&
+        //   messageOpen != undefined &&
+        //   messageOpen != null
+        // ) {
+        //   this.messageOpen = Number(messageOpen);
+        // } else {
+        //   this.setStore("messageOpen", 1);
+        // };
       },
       changePass() {
         this.$router.push({

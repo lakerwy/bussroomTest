@@ -27,7 +27,7 @@
                   <Input v-model="form.nickname" placeholder=""></Input>
                 </FormItem>
                 <FormItem label="邮箱："  prop="email">
-                  <Input v-model="form.email" placeholder=""></Input>
+                  <Input v-model="form.email" placeholder="" disabled></Input>
                 </FormItem>
               </div>
             </div>
@@ -466,7 +466,7 @@ export default {
           params.department = this.form.department;
           params.jobTitile = this.form.jobTitile;
           params.nickname = this.form.nickname;
-          params.email = this.form.email;
+          // params.email = this.form.email;
           let res = await editUserInfo(params);
           if (res.success){
             this.$Message.success("保存基础信息成功");

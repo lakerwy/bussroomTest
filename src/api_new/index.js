@@ -49,6 +49,37 @@ export const getApplyList = (params) => {
 export const getTeamProjectData = (params) => {
     return postAxios('sws_get_team_project_data', params)
 }
+/*---首页-非管理员用户接口---*/
+//获取账号余量
+export const getAccountBalance = (params) => {
+    return postAxios('sws_get_account_balance', params)
+}
+//获取我的收藏和重要项目
+export const getMyCollect = (params) => {
+    return postAxios('sws_my_collect', params)
+}
+//获取我的导出-首页
+export const getMyExport = (params) => {
+    return postAxios('sws_my_export', params)
+}
+//获取我的分享-首页
+export const getMyShare = (params) => {
+    return postAxios('sws_my_share', params)
+}
+
+/*---首页-免费用户部分接口---*/
+//招标公告推荐-免费用户
+export const getRecommendBidding = (params) => {
+    return postAxios('sws_recommend_bidding', params)
+}
+//免费&项目信息推荐
+export const getMaindata = (params) => {
+    return postAxios('sws_main_data', params)
+}
+//热门信息推荐
+export const getPvInfo = (params) => {
+    return postAxios('sws_get_pv_info', params)
+}
 
 /*-----------------------我的应用-定制行为报告------------------------------*/
 // 是否可以申请报告
@@ -118,4 +149,8 @@ export const updateApplyLog = (params) => {
 //历史操作记录
 export const getHistoryOperList = (params) => {
     return postAxios('sws_get_log_list', params)
+}
+//配额申请-非管理员
+export const addApplyLog = (params) => {
+    return postAxios('sws_add_apply_log', params)
 }

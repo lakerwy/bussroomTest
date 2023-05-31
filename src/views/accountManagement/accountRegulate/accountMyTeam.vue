@@ -167,17 +167,16 @@ export default {
           { required: true, message: '姓名不能为空', trigger: 'blur' },
           { validator: checkEmpty, trigger: "blur" }
         ],
+        department: [
+          { required: true, message: '部门不能为空', trigger: 'blur' },
+        ],
+        sex: [
+          { required: true, message: '性別不能为空', trigger: 'change' },
+        ],
         mobile: [
           { required: true, message: '手机号不能为空', trigger: 'blur' },
           { validator: validateMobile, trigger: "blur" }
-        ],
-        sex: [
-          { required: true, message: '性別不能为空', trigger: 'blur' },
-        ],
-        department: [
-          { required: true, message: '部门不能为空', trigger: 'blur' },
         ]
-
       },
       userTab: '1',
       userForm: {
@@ -262,6 +261,7 @@ export default {
               this.$Message.success(res.message);
               this.getAccountInfo();
               this.$refs.usageTeam.init();
+              this.$refs.userForm.resetFields();
               this.addUserModal = false;
             }
           });

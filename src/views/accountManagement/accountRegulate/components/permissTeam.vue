@@ -427,6 +427,7 @@ export default {
             if (res.success) {
               this.$Message.success("删除成功");
               this.getUserRights(1);
+              this.$parent.$parent.$parent.getAccountInfo();
             }
           });
         }

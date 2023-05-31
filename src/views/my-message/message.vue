@@ -216,11 +216,15 @@
 <script>
 import Cookies from "js-cookie";
 import {
-  getMessageSendData,
   editMessageSend,
   deleteMessageSend,
   shareWechat,
 } from "@/api/index";
+import {
+  getMessageSendData,
+} from "@/api_new/index";
+
+
 export default {
   name: "my-message",
   data() {

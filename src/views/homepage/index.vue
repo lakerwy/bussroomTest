@@ -194,16 +194,6 @@ import PlatformBox from "./components/platformBox"
 import UserInfo from "./components/userInfo"
 import ActiveBox from "./components/activeBox"
 // import {getAccountUsage, getApplyList, getProjectData, getProjectStatus, getTeamProjectData} from "@/api/homepage";
-import {
-  getAccountBalance,
-  getMyCollect,
-  getMyExport,
-  getMyShare,
-  getMySub,
-  getMyVisit,
-  getRecommendBidding,
-  getMaindata, getPvInfo,
-} from "../../api/homepage";
 import {mapMutations} from "vuex";
 import { setFreeMask, dateFormat } from "@/utils/utils.js";
 import AmountBox from "./components/amountBox"
@@ -214,9 +204,16 @@ import {
   getAccountUsage,
   getApplyList,
   getTeamProjectData,
+  getRecommendBidding,
+  getMaindata,
+  getPvInfo,
+  getAccountBalance,
+  getMyCollect,
+  getMyExport,
+  getMyShare,
 } from "@/api_new/index";
-
-
+import { getMyVisit } from "@/api_new/myAttention";
+import { getMySub} from "@/api_new/mySubscript";
 
 export default {
   components: {
@@ -685,7 +682,7 @@ export default {
       const {success, result} = res;
       if(success){
         this.browseListData[0].titleNum = result.totalElements;
-        this.browseListData[0].list = result.content;
+        this.browseListData[0].list = result.content&&result.content.length>5?result.content.slice(0,5):result.content;
       }
     },
     //获取我的收藏0一般 1重要
@@ -734,7 +731,7 @@ export default {
       const {success, result} = res;
       if(success){
         this.browseListData[2].titleNum = result.totalElements;
-        this.browseListData[2].list = result.content;
+        this.browseListData[2].list = result.content&&result.content.length>5?result.content.slice(0,5):result.content;
       }
     },
     //获取我的分享

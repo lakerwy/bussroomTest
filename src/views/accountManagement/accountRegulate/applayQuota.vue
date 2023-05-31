@@ -29,8 +29,7 @@
 </template>
 
 <script>
-import { addApplyLog } from "@/api/account";
-import { getApplyList } from "@/api/homepage";
+import { getApplyList, addApplyLog } from "@/api_new/index";
 import {mapMutations} from "vuex";
 
 export default {
