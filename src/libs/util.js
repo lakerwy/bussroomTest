@@ -365,7 +365,11 @@ util.initRouter = async function (vm, s, t) {
         //         }
         //     }
         // });
-        let res = await getMenuList();
+        let limitsType = localStorage.getItem("limitsType", limitsType);
+
+        let res = await getMenuList({
+            type: limitsType
+        });
         let menuData = res.result;
         if (!menuData) {
             return;

@@ -350,7 +350,7 @@ export const clearHttpRequestingList =  function () {
     }
   }
 
-var token = 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZ3QiOiI1NjllMjkyZTYyZTUyNWQ4MDA1MDY0YTZjOTkyNTczMSIsImF1ZCI6InN5Z25ldyIsImNpZCI6Il9AM3pydVBlaWl1QXpDSk9CSlFydEdWWF9JMUNqclotN3RAIiwiZXhwIjoxNjg1NTgwOTQwLCJpYXQiOjE2ODU0OTA5NDAsImxhbiI6InpoX2NuIiwibHRtIjoiMjAyMy0wNS0yOSIsInBpZCI6Il9AN1dzSW80TWowZklFbjlhYm5LNHNaUS4uQCIsInJtdCI6IjU4LjQ4LjIwOS4xMzQiLCJyb2xlcyI6ImFsbCIsInVpZCI6Il9AM3pydVBlaWl1QXhzU3N3SWdoMVBZSEM3RFR1TU9SUUJAIiwidXNyIjoiZnVibEBjaGluYWJpZGRpbmcuY24ifQ.FDFs7XgozfDCCnbkpFru4moiYbrHAT7mAEBooEatYsqtkhQ092CeOmSwd5VCWntEyCUpwn_lPtYlfRDlhUoU15Hv79BoHCUvRIl70ISoh9JZh5UnYc1UxOqKxSmYW0OxHhv22Mp9qyYCqyB_rO8iGbRsqudxmcRAKhfg8CSZ-Hghrx6Gb2xxqGrXOhuE3SgrmEWYx3JPoS2vKcQAfqpX9Muthi8TOrCtSiXcyRnAGyNmJtHsiM-40HbY1mwZ12D__KzOHPCQ5lVMhSFEcxRmDEiz99CpSur3YQ4zNkPTDKuANQD5AbWWLU9yHiC_h94D602VAIoCcVa9jLt8L-3FWA';
+var token = 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZ3QiOiI1NjllMjkyZTYyZTUyNWQ4MDA1MDY0YTZjOTkyNTczMSIsImF1ZCI6InN5Z25ldyIsImNpZCI6Il9AM3pydVBlaWl1QXpDSk9CSlFydEdWWF9JMUNqclotN3RAIiwiZXhwIjoxNjg2Nzg5MTgxLCJpYXQiOjE2ODY2OTkxODEsImxhbiI6InpoX2NuIiwibHRtIjoiMjAyMy0wNi0xMyIsInBpZCI6Il9AN1dzSW80TWowZklFbjlhYm5LNHNaUS4uQCIsInJtdCI6IjU4LjQ4LjIwOS4xMzQiLCJyb2xlcyI6ImFsbCIsInVpZCI6Il9AM3pydVBlaWl1QXhzU3N3SWdoMVBZSEM3RFR1TU9SUUJAIiwidXNyIjoiZnVibEBjaGluYWJpZGRpbmcuY24ifQ.CzY9r3VtO-tl0mGhvj8Qs03WUcwV5HTM_J0xxgb1pq7kZkq52ZTlbpHPoC0Te5CC2SuRM3PM3auMdNfh9OnT3tdtKIZrO-H4YFDvuUREIoHqQGQrk9HQxusRerCD1AIXfoq6Gs8lJ35kGHYBpwG6PbukD5dGBn7nimEe2q7CsZ8tghs53KIzVIluRAN724erv_2ZIKBeXvXPfb43AA5Z4fG_LNNWOSh3gDiHElQLPFtXRdrY3OnwvxFLr2sUty1r5hywl1DLdoS-Pe0H0mucWhvbR3m28Wzukx8Elk_nL-2yxXt-GoQI78a0pzI30t_CriKTl9HQUvk4xbAdORDjvQ';
 var sygId = '/313035392e302e7379675f637573746f6d';
 if (Cookies.get('token')){
     token = Cookies.get('token');
@@ -372,8 +372,8 @@ export const postAxios = function(funcode, params){
         },
         url: `${base}${sygId}/datax/json/${funcode}`,
         data: {
-            // cpcode: 'sws1',
-            // device: 'sws1',
+            cpcode: 'sws1',
+            device: 'sws1',
             token: token,
             ...params
         },

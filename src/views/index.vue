@@ -414,8 +414,12 @@ export default {
       //     this.loading = false;
       //   }
       // });
+      let limitsType = localStorage.getItem("limitsType", limitsType);
+
       let endDate = new Date(new Date().getTime() + 24 * 60 * 60 * 1000 - 1);
-      let res = await userInfo();
+      let res = await userInfo({
+        type: limitsType
+      });
       if (res.success) {
         // 避免超过大小限制
         delete res.result.permissions;
@@ -625,11 +629,26 @@ export default {
       });
     },
     indexLogin() {
+      let localUrl = location.href;
+      let sessionId;
+      if (localUrl.indexOf("sessionId") !== -1) {
+        var queryList = location.href.split("?")[1].split("&");
+        for (var i = 0; i < queryList.length; i++) {
+          if (queryList[i].indexOf("sessionId") !== -1) {
+            sessionId = queryList[i].split("=")[1]
+          }
+        }
+      }
+      var limitsType = 'pay'; //free pay
+      if (sessionId){
+        limitsType = sessionId;
+      }
+      localStorage.setItem("limitsType", limitsType);
+
       this.afterLogin();
       // var hrefStr = location.href.split("?")[1];
       // var sessionId;
-      // if (hrefStr.indexOf("&") != -1) {
-      //   sessionId = hrefStr.split("&")[0].split("=")[1];
+      // if (hrefStr.indexOf("&") != -1) {      //   sessionId = hrefStr.split("&")[0].split("=")[1];
       // } else {
       //   sessionId = hrefStr.split("=")[1];
       // }

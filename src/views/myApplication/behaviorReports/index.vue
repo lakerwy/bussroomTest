@@ -218,10 +218,11 @@ export default {
       } else if (this.reportStatus == 2) { // 已生成，可下载报告,调下载接口
         let res = await downReport();
         if (res.code == 200){
-          let elA = document.createElement("a");
-          elA.href = res.message;
-          elA.download = res.message;
-          elA.click()
+          this.$Message.success("下载报告成功");
+          // let elA = document.createElement("a");
+          // elA.href = res.message;
+          // elA.download = res.message;
+          // elA.click()
         }
       }
     }

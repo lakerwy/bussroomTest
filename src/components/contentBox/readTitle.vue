@@ -25,13 +25,13 @@ import {mapMutations} from "vuex";
 export default {
   name: "readTitle",
   props: {
-    url: String,
+    // url: String,
     title: String,
     id: String,
   },
   data() {
     return {
-
+      url: "https://chinabidding.bid5.cn/html/infoDetails.html",
     }
   },
   computed: {
