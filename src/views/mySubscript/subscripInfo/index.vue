@@ -578,7 +578,9 @@ export default {
         };
         return collection;
       })
-      collectMailSub(collectionList).then((res) => {
+      collectMailSub({
+        array: JSON.stringify(collectionList)
+      }).then((res) => {
         if (res.success) {
           this.$Message.success("收藏成功");
         }
@@ -625,7 +627,9 @@ export default {
           obj.userIds = this.shareUser;
           return obj
         })
-        setShare(params).then(res=>{
+        setShare({
+          array: JSON.stringify(params)
+        }).then(res=>{
           if (res.success){
             this.shareModal = false;
             this.$Message.success("分享成功");

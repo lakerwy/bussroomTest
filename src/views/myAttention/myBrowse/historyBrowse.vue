@@ -593,7 +593,9 @@ export default {
         };
         return collection;
       })
-      collectMailSub(collectionList).then((res) => {
+      collectMailSub({
+        array: JSON.stringify(collectionList)
+      }).then((res) => {
         if (res.success) {
           this.$Message.success("收藏成功");
           this.selection = [];
@@ -729,7 +731,9 @@ export default {
           return obj
         })
         console.log(params);
-        setShare(params).then(res=>{
+        setShare({
+          array: JSON.stringify(params)
+        }).then(res=>{
           if (res.success){
             this.shareModal = false;
             this.$Message.success("分享成功");

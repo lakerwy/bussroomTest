@@ -246,7 +246,6 @@
 
 <script>
 import {
-  getToken,
   login,
   githubLogin,
   qqLogin,
@@ -268,7 +267,8 @@ import LangSwitch from "@/views/main-components/lang-switch";
 import RectLoading from "@/views/main-components/rect-loading";
 import CountDownButton from "@/views/my-components/xboot/count-down-button";
 import util from "@/libs/util.js";
-import {getSwsuserInfo as userInfo} from "@/api_new/index"
+import dictUtil from '@/libs/dictUtil'
+import {getSwsuserInfo as userInfo, getToken} from "@/api_new/index"
 
 export default {
   components: {
@@ -361,10 +361,11 @@ export default {
         }
       });
     },
-    async afterLogin() {
-      // let accessToken = res.result;
-      // let endDate = new Date(new Date().getTime() + 24 * 60 * 60 * 1000 - 1);
-      // this.setStore("accessToken", accessToken);
+    async afterLogin(result) {
+      let accessToken = result.result;
+      this.setStore("accessToken", accessToken);
+
+      dictUtil.initDictData(this);
       // getOtherSet().then((res) => {
       //   if (res.result) {
       //     let domain = res.result.ssoDomain;
@@ -414,12 +415,8 @@ export default {
       //     this.loading = false;
       //   }
       // });
-      let limitsType = localStorage.getItem("limitsType", limitsType);
-
       let endDate = new Date(new Date().getTime() + 24 * 60 * 60 * 1000 - 1);
-      let res = await userInfo({
-        type: limitsType
-      });
+      let res = await userInfo();
       if (res.success) {
         // 避免超过大小限制
         delete res.result.permissions;
@@ -639,13 +636,35 @@ export default {
           }
         }
       }
-      var limitsType = 'pay'; //free pay
-      if (sessionId){
-        limitsType = sessionId;
+      if (sessionId) {
+        getToken({
+          sessionId,
+        }).then((res) => {
+          if (res.success) {
+            var aprilList = localStorage.getItem("aprilList")
+                ? JSON.parse(localStorage.getItem("aprilList"))
+                : [];
+            var aprilFlag = localStorage.getItem("aprilFlag")
+                ? localStorage.getItem("aprilFlag")
+                : "";
+            localStorage.clear();
+            localStorage.setItem("aprilList", JSON.stringify(aprilList));
+            localStorage.setItem("aprilFlag", aprilFlag);
+            localStorage.setItem("sessionId", sessionId);
+            this.afterLogin(res);
+          } else {
+            this.$Modal.info({
+              title: "提醒",
+              content: "用户已失效，点击确认跳转到官网首页。",
+              onOk: () => {
+                location.href = "https://www.chinabidding.cn/";
+              },
+            });
+          }
+        });
+      } else {
+        location.href = "https://www.chinabidding.cn/";
       }
-      localStorage.setItem("limitsType", limitsType);
-
-      this.afterLogin();
       // var hrefStr = location.href.split("?")[1];
       // var sessionId;
       // if (hrefStr.indexOf("&") != -1) {      //   sessionId = hrefStr.split("&")[0].split("=")[1];

@@ -627,7 +627,7 @@ export default {
           this.getSms = "发送中";
           this.sending = true;
           let params = {
-            email: this.emailForm.email,
+            newEmail: this.emailForm.email,
             oldEmail: this.emailForm.oldEmail,
             type: 2,//修改手机
             verifyType: 1

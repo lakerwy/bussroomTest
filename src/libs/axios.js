@@ -350,7 +350,7 @@ export const clearHttpRequestingList =  function () {
     }
   }
 
-var token = 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZ3QiOiI1NjllMjkyZTYyZTUyNWQ4MDA1MDY0YTZjOTkyNTczMSIsImF1ZCI6InN5Z25ldyIsImNpZCI6Il9AM3pydVBlaWl1QXpDSk9CSlFydEdWWF9JMUNqclotN3RAIiwiZXhwIjoxNjg2Nzg5MTgxLCJpYXQiOjE2ODY2OTkxODEsImxhbiI6InpoX2NuIiwibHRtIjoiMjAyMy0wNi0xMyIsInBpZCI6Il9AN1dzSW80TWowZklFbjlhYm5LNHNaUS4uQCIsInJtdCI6IjU4LjQ4LjIwOS4xMzQiLCJyb2xlcyI6ImFsbCIsInVpZCI6Il9AM3pydVBlaWl1QXhzU3N3SWdoMVBZSEM3RFR1TU9SUUJAIiwidXNyIjoiZnVibEBjaGluYWJpZGRpbmcuY24ifQ.CzY9r3VtO-tl0mGhvj8Qs03WUcwV5HTM_J0xxgb1pq7kZkq52ZTlbpHPoC0Te5CC2SuRM3PM3auMdNfh9OnT3tdtKIZrO-H4YFDvuUREIoHqQGQrk9HQxusRerCD1AIXfoq6Gs8lJ35kGHYBpwG6PbukD5dGBn7nimEe2q7CsZ8tghs53KIzVIluRAN724erv_2ZIKBeXvXPfb43AA5Z4fG_LNNWOSh3gDiHElQLPFtXRdrY3OnwvxFLr2sUty1r5hywl1DLdoS-Pe0H0mucWhvbR3m28Wzukx8Elk_nL-2yxXt-GoQI78a0pzI30t_CriKTl9HQUvk4xbAdORDjvQ';
+var token = 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZ3QiOiI1NjllMjkyZTYyZTUyNWQ4MDA1MDY0YTZjOTkyNTczMSIsImF1ZCI6InN5Z25ldyIsImNpZCI6Il9AM3pydVBlaWl1QXpDSk9CSlFydEdWWF9JMUNqclotN3RAIiwiZXhwIjoxNjg3MzkzNzg0LCJpYXQiOjE2ODczMDM3ODQsImxhbiI6InpoX2NuIiwibHRtIjoiMjAyMy0wNi0xOSIsInBpZCI6Il9AN1dzSW80TWowZklFbjlhYm5LNHNaUS4uQCIsInJtdCI6IjU4LjQ4LjIwOS4xMzQiLCJyb2xlcyI6ImFsbCIsInVpZCI6Il9AM3pydVBlaWl1QXhzU3N3SWdoMVBZSEM3RFR1TU9SUUJAIiwidXNyIjoiZnVibEBjaGluYWJpZGRpbmcuY24ifQ.BN-fanbbXy6cNVCUZu_iXqdejApbB1Pl0c1cGd6591kkRIxm0NupGf7MHWxm9Wledlrn05LSGLL2mZDMMzzBiVTgQgv1a9DpgKWSwhOJKDDwadJ8TZThvmau70EFlx15EJwcMOtK1letEZyL-dOs4COmmijjMjRmcvHijkA-ts9rRRtgqgUMT_tg5W0ZY0sEetwCjP8lpKj0_-DBiRYpCwi7zgG5KPZHYdXlCuyL8GohU5Z6z6bjJ20HQWoe0F9wAp55pDEtJzo_R-7VQXRGj1mVb9AWPiiaMcWTPDIiYuVAjR5W4RW8364ZIRfIXykWYCZVvLNBjA5CeuYfOUKsQw';
 var sygId = '/313035392e302e7379675f637573746f6d';
 if (Cookies.get('token')){
     token = Cookies.get('token');
@@ -365,6 +365,7 @@ try {
     console.log(error)
 }
 export const postAxios = function(funcode, params){
+    let accessToken = getStore('accessToken');
     return axios({
         method: 'post',
         headers: {
@@ -375,6 +376,7 @@ export const postAxios = function(funcode, params){
             cpcode: 'sws1',
             device: 'sws1',
             token: token,
+            accessToken: accessToken,
             ...params
         },
         transformRequest: [function (data) {
@@ -387,5 +389,32 @@ export const postAxios = function(funcode, params){
         }],
     })
 }
+
+export const postDownAxios = (funcode, params) => {
+    let accessToken = getStore('accessToken');
+    return axios({
+        method: 'post',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        url: `${base}${sygId}/datax/json/${funcode}`,
+        data: {
+            cpcode: 'sws1',
+            device: 'sws1',
+            token: token,
+            accessToken: accessToken,
+            ...params
+        },
+        transformRequest: [function (data) {
+            let ret = '';
+            for (let it in data) {
+                ret += encodeURIComponent(it) + '=' + encodeURIComponent(data[it]) + '&';
+            }
+            ret = ret.substring(0, ret.length - 1);
+            return ret;
+        }],
+        responseType: 'blob'
+    })
+};
 
 

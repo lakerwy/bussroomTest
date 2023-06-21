@@ -1,6 +1,10 @@
 // 统一请求路径前缀在libs/axios.js中修改
 import { postAxios } from '@/libs/axios';
 
+//获取登录accessToken
+export const getToken = (params) => {
+    return postAxios('sws_ticket_login', params)
+}
 //获取绑定公众号微信二维码
 export const toBindWechat = (params) => {
     return postAxios('sws_to_bind_wechat', params)

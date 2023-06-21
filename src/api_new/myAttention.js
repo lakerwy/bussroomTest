@@ -1,5 +1,5 @@
 // 统一请求路径前缀在libs/axios.js中修改
-import { postAxios } from '@/libs/axios';
+import { postAxios,postDownAxios } from '@/libs/axios';
 
 /*----------------------我的关注-找商机项目---------------------------*/
 //获取搜索条件列表
@@ -46,6 +46,21 @@ export const exportAnnouncement = (params) => {
 export const setShare = (params) => {
     return postAxios('sws_set_share', params)
 }
+//公告下载
+export const downAnnouncement = (params, title)=> {
+    return postDownAxios('sws_info_down', params).then((response)=>{
+        const blob = new Blob([response]); //,{type: 'application/vnd.ms-excel;charset=utf-8'}
+        const elink = document.createElement('a');
+        elink.download = title;
+        elink.style.display = 'none';
+        elink.href = URL.createObjectURL(blob);
+        document.body.appendChild(elink);
+        elink.click();
+        URL.revokeObjectURL(elink.href); // 释放URL 对象
+        document.body.removeChild(elink);
+    })
+}
+
 /*---------------------我的关注-我的浏览-----------------------------*/
 //我的浏览记录
 export const getMyVisit = (params) => {

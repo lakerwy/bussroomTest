@@ -176,6 +176,8 @@ export default {
         // userId: this.user,
         pageSize: this.pageForm.pageSize,
         pageNumber: this.pageForm.pageNumber,
+        memberId: '',
+        userId: '',
       }
       this.loading = true;
       let res = await getApplyList(params);

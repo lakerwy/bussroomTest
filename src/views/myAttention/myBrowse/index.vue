@@ -285,7 +285,7 @@
 
 <script>
 import {
-  downAnnouncement,
+
 } from "@/api/myAttention";
 import { deepClone, setProjectType, filterDict, dateFormat } from "@/utils/utils.js";
 import { columnType, informationType, timeRange, projectPhase, areaData, category1Data, regionData} from "@/utils/const/attention";
@@ -303,7 +303,8 @@ import {
   collectMailSub,
   removeCollect,
   exportAnnouncement,
-  setShare
+  setShare,
+  downAnnouncement,
 } from "@/api_new/myAttention";
 
 export default {
@@ -675,11 +676,10 @@ export default {
       let res = await exportAnnouncement(params);
       const {success, result} = res;
       if(success){
-        this.$Message.success("导出公告成功")
         let title = result;
-        // downAnnouncement({
-        //   path: result
-        // }, title)
+        downAnnouncement({
+          path: result
+        }, title)
       }
     },
     //批量收藏功能
@@ -698,7 +698,9 @@ export default {
         };
         return collection;
       })
-      collectMailSub(collectionList).then((res) => {
+      collectMailSub({
+        array: JSON.stringify(collectionList)
+      }).then((res) => {
         if (res.success) {
           this.$Message.success("收藏成功");
           this.selection = [];
@@ -833,7 +835,7 @@ export default {
           area +
           " + " +
           filterDict(params.dateRange,timeRange);
-      if (this.groupFlag) params.id = this.groupFlag;
+      params.id = this.groupFlag;
       saveMemberSearch(params).then(res=>{
         if (res.success) {
           this.$Message.success('保存搜索条件成功')
@@ -907,7 +909,7 @@ export default {
           area +
           " + " +
           filterDict(params.dateRange,timeRange);
-      if (this.groupFlag) params.id = this.groupFlag;
+      params.id = this.groupFlag;
       saveMemberSearch(params).then((res) => {
         if (res.success) {
           this.$Message.success('保存搜索条件成功')
@@ -1192,7 +1194,9 @@ export default {
           return obj
         })
         console.log(params);
-        setShare(params).then(res=>{
+        setShare({
+          array: JSON.stringify(params)
+        }).then(res=>{
           if (res.success){
             this.shareModal = false;
             this.$Message.success("分享成功");

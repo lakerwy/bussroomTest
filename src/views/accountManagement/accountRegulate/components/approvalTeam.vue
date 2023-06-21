@@ -181,9 +181,11 @@ export default {
       }
       let params = {
         // createBy: this.user,
+        createBy: '',
         userId: this.user,
         pageSize: this.pageForm.pageSize,
         pageNumber: this.pageForm.pageNumber,
+        memberId: ''
       }
       this.loading = true;
       let res = await getApplyList(params);

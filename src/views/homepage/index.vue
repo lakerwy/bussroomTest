@@ -622,6 +622,8 @@ export default {
         memberId: this.userInfoDetail.companyId,
         pageSize: 4,
         pageNumber: 1,
+        userId: '',
+        createBy: '',
       }
       let res = await getApplyList(params);
       const {success, result} = res;
@@ -677,6 +679,10 @@ export default {
         createBy: this.userInfoDetail.id,
         dateRange: 1,
         type: 0,
+        infoType: '',
+        searchType: '',
+        area: '',
+        title: ''
       }
       let res = await getMyVisit(params);
       const {success, result} = res;
@@ -693,6 +699,7 @@ export default {
         pageNumber: 1,
         dateRange: flag ? 3 : 1,
         type: 0,
+        signFlag: '',
       }
       if (flag) params.signFlag = flag;
       let res = await getMyCollect(params);
@@ -726,6 +733,12 @@ export default {
         pageSize: 5,
         dateRange: 1,
         type: 0,
+        pageNumber: '',
+        infoType: '',
+        area: '',
+        searchType: '',
+        title: '',
+        dingyueId: ''
       }
       let res = await getMySub(params);
       const {success, result} = res;

@@ -112,7 +112,7 @@ new Vue({
         }
         util.initRouter(this);
         // 初始化全局数据字典
-        dictUtil.initDictData(this);
+        // dictUtil.initDictData(this);
 
         this.currentPageName = this.$route.name;
         // 显示打开的页面的列表

@@ -441,7 +441,9 @@ export default {
         };
         return collection;
       })
-      collectMailSub(collectionList).then((res) => {
+      collectMailSub({
+        array: JSON.stringify(collectionList)
+      }).then((res) => {
         if (res.success) {
           this.$Message.success("收藏成功");
           // this.selection = [];
