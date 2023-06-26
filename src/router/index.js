@@ -110,9 +110,10 @@ router.beforeEach((to, from, next) => {
                         });
                     }
                 } else {
-                    next({
-                        name: 'login',
-                    });
+                    // next({
+                    //     name: 'login',
+                    // });
+                    location.href = "https://chinabidding.bid5.cn/";
                 }
             } else if (Cookies.get('userInfo') && name == 'login') {
                 // 判断是否已经登录且前往的是登录页

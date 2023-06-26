@@ -83,7 +83,7 @@
         <div style="clear: both"></div>
         <Table class="my-table" :columns="columns" :data="tableData" :loading="loadingFlag" @on-selection-change="handleSelectChange">
           <template slot-scope="{ row }" slot="title">
-            <ReadTitle :url="'https://'+ row.webUrl" :title="row.title" :id="row.infoId"></ReadTitle>
+            <ReadTitle :url="row.webUrl" :title="row.title" :id="row.infoId"></ReadTitle>
           </template>
         </Table>
         <Page

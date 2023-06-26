@@ -201,7 +201,7 @@ export default {
           render: (h, params)=>{
             return (
                 <a target="_blank"
-                   href={'https://'+ params.row.webUrl}
+                   href={ params.row.webUrl}
                    class="infoTitle"
                 >{params.row.title}</a>
             )

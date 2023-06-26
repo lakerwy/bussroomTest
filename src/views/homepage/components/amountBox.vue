@@ -62,11 +62,11 @@ export default {
     return{
       value2: 0,
       yhqList: [
-        {id: 1, title: "代写标书券", img: "img/img_sws2.0_dxbsq1.png", price: 1000, date: "2023.03.22"},
-        {id: 2, title: "代金券", img: "img/img_sws2.0_djq2.png", price: 500, date: "2023.03.22"},
-        {id: 3, title: "消费券", img: "img/img_sws2.0_yhq3.png", price: 5000, date: "2023.03.22"},
-        {id: 4, title: "代写标书券", img: "img/img_sws2.0_zh1.png", price: 0, date: "2023.03.22"},
-        {id: 5, title: "代金券", img: "img/img_sws2.0_dxbsq1.png", price: 500, date: "2023.03.22"},
+        // {id: 1, title: "代写标书券", img: "img/img_sws2.0_dxbsq1.png", price: 1000, date: "2023.03.22"},
+        // {id: 2, title: "代金券", img: "img/img_sws2.0_djq2.png", price: 500, date: "2023.03.22"},
+        // {id: 3, title: "消费券", img: "img/img_sws2.0_yhq3.png", price: 5000, date: "2023.03.22"},
+        // {id: 4, title: "代写标书券", img: "img/img_sws2.0_zh1.png", price: 0, date: "2023.03.22"},
+        // {id: 5, title: "代金券", img: "img/img_sws2.0_dxbsq1.png", price: 500, date: "2023.03.22"},
       ],
       memberType: "",
     }

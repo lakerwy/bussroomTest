@@ -657,13 +657,13 @@ export default {
               title: "提醒",
               content: "用户已失效，点击确认跳转到官网首页。",
               onOk: () => {
-                location.href = "https://www.chinabidding.cn/";
+                location.href = "https://chinabidding.bid5.cn/";
               },
             });
           }
         });
       } else {
-        location.href = "https://www.chinabidding.cn/";
+        location.href = "https://chinabidding.bid5.cn/";
       }
       // var hrefStr = location.href.split("?")[1];
       // var sessionId;

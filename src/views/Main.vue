@@ -459,24 +459,26 @@ export default {
         });
       } else if (name == "loginout") {
         // 退出登录
-        let sessionId = localStorage.getItem("sessionId");
-        this.$store.commit("setLoading", true);
-
-        getOtherSet().then((res) => {
-          this.$store.commit("setLoading", false);
-          if (res.result) {
-            let domain = res.result.ssoDomain;
-            Cookies.set("accessToken", "", {
-              domain: domain,
-              expires: 7,
-            });
-          }
-          this.$store.commit("logout", this);
-          this.$store.commit("clearOpenedSubmenu");
-          this.setStore("accessToken", "");
-          // 强制刷新页面 重新加载router
-          location.reload();
-        });
+        // let sessionId = localStorage.getItem("sessionId");
+        // this.$store.commit("setLoading", true);
+        // getOtherSet().then((res) => {
+        //   this.$store.commit("setLoading", false);
+        //   if (res.result) {
+        //     let domain = res.result.ssoDomain;
+        //     Cookies.set("accessToken", "", {
+        //       domain: domain,
+        //       expires: 7,
+        //     });
+        //   }
+        //   this.$store.commit("logout", this);
+        //   this.$store.commit("clearOpenedSubmenu");
+        //   this.setStore("accessToken", "");
+        //   // 强制刷新页面 重新加载router
+        //   location.reload();
+        // });
+        this.setStore("accessToken", "");
+        localStorage.clear();
+        location.href = "https://chinabidding.bid5.cn/";
       }
     },
     checkTag(name) {

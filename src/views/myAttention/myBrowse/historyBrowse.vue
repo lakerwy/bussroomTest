@@ -179,7 +179,7 @@
         <div style="clear: both"></div>
         <Table class="my-table" :columns="columns" :data="tableData" @on-selection-change="handleSelectChange" :loading="loadingFlag">
           <template slot-scope="{ row }" slot="title">
-            <ReadTitle :url="'https://'+ row.webUrl" :title="row.title" :id="row.infoId"></ReadTitle>
+            <ReadTitle :url="row.webUrl" :title="row.title" :id="row.infoId"></ReadTitle>
           </template>
         </Table>
         <Page
@@ -722,7 +722,7 @@ export default {
             message: this.message,
             searchData: {},
           }
-          content.url = 'https://'+ item.webUrl;
+          content.url = item.webUrl;
           obj.content = JSON.stringify(content);
           let titleObj = setProjectType(item);
           obj.title = `【${titleObj.type}】 ${item.title}`;
