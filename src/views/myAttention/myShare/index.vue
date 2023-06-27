@@ -101,7 +101,6 @@
 </template>
 
 <script>
-import {downAnnouncement} from "@/api/myAttention";
 import {  getArrayIds } from "@/utils/utils.js";
 import { columnType, informationType, timeRange } from "@/utils/const/attention";
 import {setColumn} from "./js/columns";
@@ -112,6 +111,7 @@ import {
   getMyShareList,
   removeShare,
   exportAnnouncement,
+  downAnnouncement,
 } from "@/api_new/myAttention";
 
 export default {
@@ -211,11 +211,11 @@ export default {
       if(success){
         let title = "招标与采购导出.xlsx"
         this.$Message.success("导出公告成功")
-        // downAnnouncement({
-        //   path: result
-        // }, title).then(()=>{
-        //   this.$Message.success("导出成功");
-        // })
+        downAnnouncement({
+          path: result
+        }, title).then(()=>{
+          this.$Message.success("导出成功");
+        })
       }
     },
     //勾选

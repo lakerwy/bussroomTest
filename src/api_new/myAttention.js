@@ -46,19 +46,15 @@ export const exportAnnouncement = (params) => {
 export const setShare = (params) => {
     return postAxios('sws_set_share', params)
 }
+
+let downUrl = 'http://gys-public.oss-cn-beijing.aliyuncs.com/user_export/'
 //公告下载
 export const downAnnouncement = (params, title)=> {
-    return postDownAxios('sws_info_down', params).then((response)=>{
-        const blob = new Blob([response]); //,{type: 'application/vnd.ms-excel;charset=utf-8'}
-        const elink = document.createElement('a');
-        elink.download = title;
-        elink.style.display = 'none';
-        elink.href = URL.createObjectURL(blob);
-        document.body.appendChild(elink);
-        elink.click();
-        URL.revokeObjectURL(elink.href); // 释放URL 对象
-        document.body.removeChild(elink);
-    })
+    let url = downUrl+params.path;
+    let elA = document.createElement("a");
+    elA.href = url;
+    elA.download = url;
+    elA.click();
 }
 
 /*---------------------我的关注-我的浏览-----------------------------*/

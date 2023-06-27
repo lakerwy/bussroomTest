@@ -199,7 +199,7 @@
 
 <script>
 import {
-  downAnnouncement,
+
 } from "@/api/myAttention";
 import { deepClone, setProjectType, filterDict, dateFormat } from "@/utils/utils.js";
 import { columnType, informationType, timeRange, projectPhase, areaData, category1Data, regionData } from "@/utils/const/attention";
@@ -213,7 +213,8 @@ import {
   collectMailSub,
   removeCollect,
   exportAnnouncement,
-  setShare
+  setShare,
+  downAnnouncement,
 } from "@/api_new/myAttention";
 
 export default {
@@ -572,9 +573,9 @@ export default {
       if(success){
         this.$Message.success("导出公告成功")
         // let title = "导出明细.xlsx"
-        // downAnnouncement({
-        //   path: result
-        // }, title)
+        downAnnouncement({
+          path: result
+        }, title)
       }
     },
     //批量收藏功能

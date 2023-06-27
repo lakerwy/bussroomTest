@@ -125,9 +125,8 @@ import { timeRange, regionData, contentRange, columnType, informationType, areaD
 import { deepClone, setProjectType, filterDict, dateFormat, setAssignObj } from "@/utils/utils.js";
 import {mapMutations} from "vuex";
 import { ShareModal, ReadTitle } from "@/components/contentBox/index.js"
-import {downAnnouncement} from "@/api/myAttention";
 
-import {exportAnnouncement, setShare, collectMailSub} from "@/api_new/myAttention";
+import {exportAnnouncement, setShare, collectMailSub,downAnnouncement} from "@/api_new/myAttention";
 import {getMySubscribe, getMySub,putGroup} from "@/api_new/mySubscript";
 
 export default {
@@ -554,9 +553,9 @@ export default {
       if(success){
         let title = result;
         this.$Message.success("导出公告成功")
-        // downAnnouncement({
-        //   path: result
-        // }, title)
+        downAnnouncement({
+          path: result
+        }, title)
       }
     },
     handleSelectChange(selection){
