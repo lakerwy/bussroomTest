@@ -47,7 +47,7 @@ export const setShare = (params) => {
     return postAxios('sws_set_share', params)
 }
 
-let downUrl = 'http://gys-public.oss-cn-beijing.aliyuncs.com/user_export/'
+let downUrl = 'https://gys-public.oss-cn-beijing.aliyuncs.com/user_export/'
 //公告下载
 export const downAnnouncement = (params, title)=> {
     let url = downUrl+params.path;

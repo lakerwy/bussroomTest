@@ -8,7 +8,7 @@
       <ul v-if="!isSlider">
         <li v-for="(item,index) in list" :key="index">
           <i class="point"></i>
-          <a :class="item.date?'freeTitle':''" :href="item.webUrl?'https://'+item.webUrl:item.url" target="_blank" :title="item.title">{{
+          <a :class="item.date?'freeTitle':''" :href="item.webUrl?item.webUrl:item.url" target="_blank" :title="item.title">{{
               item.title
             }}</a>
           <span class="date" v-if="item.date">
@@ -24,7 +24,7 @@
         >
           <li v-for="(item,index) in list" :key="index">
             <i class="point"></i>
-            <a :class="item.date?'freeTitle':''" :href="item.webUrl?'https://'+item.webUrl:item.url" target="_blank" :title="item.title">{{
+            <a :class="item.date?'freeTitle':''" :href="item.webUrl?item.webUrl:item.url" target="_blank" :title="item.title">{{
                 item.title
               }}</a>
             <span class="date">
