@@ -727,7 +727,7 @@ export default {
           obj.content = JSON.stringify(content);
           let titleObj = setProjectType(item);
           obj.title = `【${titleObj.type}】 ${item.title}`;
-          obj.infoId = item.id;
+          obj.infoId = item.infoId;
           obj.userIds = this.shareUser;
           return obj
         })

@@ -554,6 +554,8 @@ export default {
           }
         })
         this.pageForm.pageTotal = result.total;
+      } else {
+        this.$Message.error('查询失败，请稍后再试')
       }
     },
     // 拟在建查询
@@ -608,6 +610,8 @@ export default {
           }
         })
         this.pageForm.pageTotal = result.total;
+      } else {
+        this.$Message.error('查询失败，请稍后再试')
       }
     },
     searchVal(){ //立即搜索按钮
